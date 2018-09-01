@@ -1,0 +1,103 @@
+//
+//  ACPreferences.m
+//  VPN
+//
+//  Created by Alexandre Colucci on 07.07.2018.
+//  Copyright © 2018 Timac. All rights reserved.
+//
+
+#import "ACPreferences.h"
+
+//
+// Preferences keys
+//
+NSString * const kServicesPrefKey = @"Services";
+NSString * const kServiceIdentifierKey = @"Identifier";
+NSString * const kServiceAlwaysConnectedKey = @"AlwaysConnected";
+
+NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay";
+
+
+
+@implementation ACPreferences
+
+
++ (ACPreferences *)sharedPreferences
+{
+	static ACPreferences *SsharedPreferences = nil;
+	if(SsharedPreferences == nil)
+	{
+		SsharedPreferences = [[ACPreferences alloc] init];
+	}
+	
+	return SsharedPreferences;
+}
+
+-(NSArray<NSString *>*)alwaysConnectedServicesIdentifiers
+{
+	NSMutableArray<NSString *>* outAlwaysConnectedServicesIdentifiers = [[NSMutableArray alloc] init];
+	
+	// Get the list of services that should always been connected
+	NSArray <NSDictionary *>*services = [[NSUserDefaults standardUserDefaults] arrayForKey:kServicesPrefKey];
+	for(NSDictionary *service in services)
+	{
+		NSString *serviceIdentifier = service[kServiceIdentifierKey];
+		BOOL isAlwaysConnected = [service[kServiceAlwaysConnectedKey] boolValue];
+		if(isAlwaysConnected && [serviceIdentifier length] > 0)
+		{
+			[outAlwaysConnectedServicesIdentifiers addObject:serviceIdentifier];
+		}
+	}
+	
+	return outAlwaysConnectedServicesIdentifiers;
+}
+
+-(void)setAlwaysConnected:(BOOL)inAlwaysConnected forServicesIdentifier:(NSString *)inServiceIdentifier
+{
+	BOOL serviceFound = NO;
+	NSMutableArray <NSDictionary *>*services = [[[NSUserDefaults standardUserDefaults] arrayForKey:kServicesPrefKey] mutableCopy];
+	if(services == nil)
+	{
+		services = [[NSMutableArray alloc] init];
+	}
+	
+	for(NSDictionary *service in services)
+	{
+		NSString *serviceIdentifier = service[kServiceIdentifierKey];
+		if([serviceIdentifier isEqualToString:inServiceIdentifier])
+		{
+			NSMutableDictionary *updatedServiceDictionary = [service mutableCopy];
+			updatedServiceDictionary[kServiceAlwaysConnectedKey] = [NSNumber numberWithBool:inAlwaysConnected];
+			
+			[services removeObject:service];
+			[services addObject:updatedServiceDictionary];
+			
+			serviceFound = YES;
+			break;
+		}
+	}
+	
+	if(!serviceFound)
+	{
+		NSMutableDictionary *serviceDictionary = [[NSMutableDictionary alloc] init];
+		serviceDictionary[kServiceIdentifierKey] = inServiceIdentifier;
+		serviceDictionary[kServiceAlwaysConnectedKey] = [NSNumber numberWithBool:inAlwaysConnected];
+		[services addObject:serviceDictionary];
+	}
+	
+	[[NSUserDefaults standardUserDefaults] setObject:services forKey:kServicesPrefKey];
+}
+
+-(NSInteger)alwaysConnectedRetryDelay
+{
+	NSInteger retryDelay = [[NSUserDefaults standardUserDefaults] integerForKey:kAlwaysConnectedRetryDelayPrefKey];
+	if(retryDelay <= 10)
+	{
+		// Default is 120s
+		retryDelay = 120;
+	}
+	
+	return retryDelay;
+}
+
+@end
