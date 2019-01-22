@@ -22,6 +22,12 @@ static void PrintUsage()
 	fprintf(stderr, "\t To stop the VPN called 'MyVPN':\n");
 	fprintf(stderr, "\t vpnutil stop MyVPN\n");
 	fprintf(stderr, "\n");
+    fprintf(stderr, "\t To list all available VPNs and their state:\n");
+    fprintf(stderr, "\t vpnutil list\n");
+    fprintf(stderr, "\n");
+    fprintf(stderr, "\t To get the status of the VPN called 'MyVPN':\n");
+    fprintf(stderr, "\t vpnutil status MyVPN\n");
+    fprintf(stderr, "\n");
 	fprintf(stderr, "Copyright © 2018 Alexandre Colucci\nblog.timac.org\n");
 	fprintf(stderr, "\n");
 	
@@ -77,38 +83,73 @@ int main(int argc, const char * argv[])
 {
 	@autoreleasepool
 	{
-		if (argc != 3)
-		{
-			PrintUsage();
-		}
 		
 		// Do we want to start or stop the service?
 		BOOL shouldStartService = YES;
-		NSString *parameter1 = [NSString stringWithUTF8String:argv[1]];
+        BOOL statusService = NO;
+        BOOL needServiceName = NO;
+        BOOL listService = NO;
+        int numArgs = 0;
+
+        if (argc <= 1)
+        {
+            PrintUsage();
+        }
+        
+        NSString *parameter1 = [NSString stringWithUTF8String:argv[1]];
 		if ([parameter1 isEqualToString:@"start"])
 		{
 			shouldStartService = YES;
+            needServiceName = YES;
+            numArgs = 3;
 		}
 		else if ([parameter1 isEqualToString:@"stop"])
 		{
 			shouldStartService = NO;
+            needServiceName = YES;
+            numArgs = 3;
 		}
+        else if ([parameter1 isEqualToString:@"list"])
+        {
+            needServiceName = NO;
+            shouldStartService = NO;
+            listService = YES;
+            numArgs = 2;
+        }
+        else if ([parameter1 isEqualToString:@"status"])
+        {
+            statusService = YES;
+            needServiceName = YES;
+            shouldStartService = NO;
+            listService = NO;
+            numArgs = 3;
+        }
 		else
 		{
 			PrintUsage();
 		}
 		
+        if (argc != numArgs)
+        {
+            PrintUsage();
+        }
+        
 		// Get the VPN name?
-		NSString *vpnName = [NSString stringWithUTF8String:argv[2]];
-		if ([vpnName length] <= 0)
-		{
-			PrintUsage();
-		}
+        __block NSString *vpnName;
+        if (needServiceName)
+        {
+            vpnName = [NSString stringWithUTF8String:argv[2]];
+            if ([vpnName length] <= 0)
+            {
+                PrintUsage();
+            }
+        }
 		
 		// Since this is a command line tool, we manually run an NSRunLoop
 		__block ACNEService *foundNEService = NULL;
 		__block BOOL keepRunning = YES;
-		
+        __block NSArray <ACNEService*> *neServices = NULL;
+        
 		// Make sure that the ACNEServicesManager singleton is created and load the configurations
 		[[ACNEServicesManager sharedNEServicesManager] loadConfigurationsWithHandler:^(NSError * error)
 		{
@@ -117,22 +158,22 @@ int main(int argc, const char * argv[])
 				NSLog(@"Failed to load the configurations - %@", error);
 			}
 			
-			NSArray <ACNEService*>* neServices = [[ACNEServicesManager sharedNEServicesManager] neServices];
+			neServices = [[ACNEServicesManager sharedNEServicesManager] neServices];
 			if([neServices count] <= 0)
 			{
 				NSLog(@"Could not find any VPN");
 			}
 		
-			for(ACNEService *neService in neServices)
-			{
-				if([neService.name isEqualToString:vpnName])
-				{
-					foundNEService = neService;
-					break;
-				}
-			}
+            for(ACNEService *neService in neServices)
+            {
+                if([neService.name isEqualToString:vpnName])
+                {
+                    foundNEService = neService;
+                    break;
+                }
+            }
 		
-			if(!foundNEService)
+			if(needServiceName && !foundNEService)
 			{
 				// Stop running the NSRunLoop
 				keepRunning = NO;
@@ -167,11 +208,26 @@ int main(int argc, const char * argv[])
 			// Ensure we wait at least 1s
 			if(startWaiting + 1.0 < CFAbsoluteTimeGetCurrent())
 			{
-				if(foundNEService != nil && (foundNEService.gotInitialSessionStatus))
-				{
-					//NSLog(@"Found NEService and session state");
-					keepRunning = NO;
-				}
+                if (needServiceName)
+                {
+                    if(foundNEService != nil && (foundNEService.gotInitialSessionStatus))
+                    {
+                        //NSLog(@"Found NEService and session state");
+                        keepRunning = NO;
+                    }
+                }
+                else
+                {
+                    // go through all services and keep running if we don't have a state for each service
+                    keepRunning = NO;
+                    for(ACNEService *neService in neServices)
+                    {
+                        if (!neService.gotInitialSessionStatus)
+                        {
+                            keepRunning = YES;
+                        }
+                    }
+                }
 			}
 			else
 			{
@@ -179,12 +235,22 @@ int main(int argc, const char * argv[])
 			}
 		}
 		
-		if(foundNEService)
+        if (listService)
+        {
+            for(ACNEService *neService in neServices)
+            {
+                printf("%s %s\n", [neService.name UTF8String], [GetDescriptionForSCNetworkConnectionStatus(neService.state) UTF8String]);
+            }
+        }
+        else if(foundNEService)
 		{
 			SCNetworkConnectionStatus currentState = foundNEService.state;
 			//NSLog(@"Got status %@", GetDescriptionForSCNetworkConnectionStatus(currentState));
-			
-			if(shouldStartService)
+			if(statusService)
+            {
+                printf("%s %s\n", [foundNEService.name UTF8String], [GetDescriptionForSCNetworkConnectionStatus(foundNEService.state) UTF8String]);
+            }
+			else if(shouldStartService)
 			{
 				if(currentState == kSCNetworkConnectionDisconnected)
 				{
