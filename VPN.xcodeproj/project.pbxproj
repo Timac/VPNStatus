@@ -27,6 +27,15 @@
 		02799F8020F0081F00675162 /* ACNEService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7C20F0081F00675162 /* ACNEService.m */; };
 		02799F8120F0081F00675162 /* ACNEServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7E20F0081F00675162 /* ACNEServicesManager.m */; };
 		02799F8220F0081F00675162 /* ACNEServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7E20F0081F00675162 /* ACNEServicesManager.m */; };
+		65DE11A62600FF2A003E05A8 /* ACDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7A20F0081F00675162 /* ACDefines.h */; };
+		65DE11A72600FF2A003E05A8 /* ACNEService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7B20F0081F00675162 /* ACNEService.h */; };
+		65DE11A82600FF2A003E05A8 /* ACNEServicesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7D20F0081F00675162 /* ACNEServicesManager.h */; };
+		65DE11A92600FF2A003E05A8 /* ACPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 02619DFC20F7F7BE00099652 /* ACPreferences.h */; };
+		65DE11AA2600FF2A003E05A8 /* ACConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0231297920F9F8CE003F7540 /* ACConnectionManager.h */; };
+		65DE11AF2600FF3E003E05A8 /* ACNEService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7C20F0081F00675162 /* ACNEService.m */; };
+		65DE11B02600FF3E003E05A8 /* ACNEServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7E20F0081F00675162 /* ACNEServicesManager.m */; };
+		65DE11B12600FF3E003E05A8 /* ACPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DFD20F7F7BE00099652 /* ACPreferences.m */; };
+		65DE11B22600FF3E003E05A8 /* ACConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231297A20F9F8CE003F7540 /* ACConnectionManager.m */; };
 		FA53906D20EF5F7F00BA9AF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA53906C20EF5F7F00BA9AF7 /* AppDelegate.m */; };
 		FA53906F20EF5F8000BA9AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA53906E20EF5F8000BA9AF7 /* Assets.xcassets */; };
 		FA53907220EF5F8000BA9AF7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA53907020EF5F8000BA9AF7 /* MainMenu.xib */; };
@@ -69,6 +78,7 @@
 		02799F7C20F0081F00675162 /* ACNEService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNEService.m; sourceTree = "<group>"; };
 		02799F7D20F0081F00675162 /* ACNEServicesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACNEServicesManager.h; sourceTree = "<group>"; };
 		02799F7E20F0081F00675162 /* ACNEServicesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNEServicesManager.m; sourceTree = "<group>"; };
+		65DE11952600FE38003E05A8 /* libVPNUtil.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libVPNUtil.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA53906820EF5F7F00BA9AF7 /* VPNApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA53906B20EF5F7F00BA9AF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA53906C20EF5F7F00BA9AF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +108,13 @@
 				02619DFA20F7E25C00099652 /* AppKit.framework in Frameworks */,
 				02619DF920F7E25700099652 /* SystemConfiguration.framework in Frameworks */,
 				02619DF820F7E24C00099652 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65DE11932600FE38003E05A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +187,7 @@
 				FA53906820EF5F7F00BA9AF7 /* VPNApp.app */,
 				0204472520F001A400B31904 /* vpnutil */,
 				02619DE420F7DF2200099652 /* VPNStatus.app */,
+				65DE11952600FE38003E05A8 /* libVPNUtil.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +219,21 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		65DE11912600FE38003E05A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65DE11A62600FF2A003E05A8 /* ACDefines.h in Headers */,
+				65DE11A72600FF2A003E05A8 /* ACNEService.h in Headers */,
+				65DE11A82600FF2A003E05A8 /* ACNEServicesManager.h in Headers */,
+				65DE11A92600FF2A003E05A8 /* ACPreferences.h in Headers */,
+				65DE11AA2600FF2A003E05A8 /* ACConnectionManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0204472420F001A400B31904 /* vpnutil */ = {
@@ -236,6 +269,23 @@
 			productName = VPNStatus;
 			productReference = 02619DE420F7DF2200099652 /* VPNStatus.app */;
 			productType = "com.apple.product-type.application";
+		};
+		65DE11942600FE38003E05A8 /* VPNUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65DE119D2600FE38003E05A8 /* Build configuration list for PBXNativeTarget "VPNUtil" */;
+			buildPhases = (
+				65DE11912600FE38003E05A8 /* Headers */,
+				65DE11922600FE38003E05A8 /* Sources */,
+				65DE11932600FE38003E05A8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VPNUtil;
+			productName = VPNUtil;
+			productReference = 65DE11952600FE38003E05A8 /* libVPNUtil.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 		FA53906720EF5F7F00BA9AF7 /* VPNApp */ = {
 			isa = PBXNativeTarget;
@@ -274,6 +324,9 @@
 							};
 						};
 					};
+					65DE11942600FE38003E05A8 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					FA53906720EF5F7F00BA9AF7 = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
@@ -300,6 +353,7 @@
 				FA53906720EF5F7F00BA9AF7 /* VPNApp */,
 				0204472420F001A400B31904 /* vpnutil */,
 				02619DE320F7DF2200099652 /* VPNStatus */,
+				65DE11942600FE38003E05A8 /* VPNUtil */,
 			);
 		};
 /* End PBXProject section */
@@ -348,6 +402,17 @@
 				02619DF620F7E23600099652 /* ACNEService.m in Sources */,
 				02619DFF20F7F7BF00099652 /* ACPreferences.m in Sources */,
 				0231297C20F9F8CF003F7540 /* ACConnectionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65DE11922600FE38003E05A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65DE11AF2600FF3E003E05A8 /* ACNEService.m in Sources */,
+				65DE11B02600FF3E003E05A8 /* ACNEServicesManager.m in Sources */,
+				65DE11B12600FF3E003E05A8 /* ACPreferences.m in Sources */,
+				65DE11B22600FF3E003E05A8 /* ACConnectionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +504,36 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		65DE119B2600FE38003E05A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		65DE119C2600FE38003E05A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -612,6 +707,15 @@
 			buildConfigurations = (
 				02619DF220F7DF2400099652 /* Debug */,
 				02619DF320F7DF2400099652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65DE119D2600FE38003E05A8 /* Build configuration list for PBXNativeTarget "VPNUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65DE119B2600FE38003E05A8 /* Debug */,
+				65DE119C2600FE38003E05A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
