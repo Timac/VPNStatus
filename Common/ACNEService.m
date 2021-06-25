@@ -54,7 +54,8 @@
 
 -(NSString *)serverAddress
 {
-	return _configuration.VPN.protocol.serverAddress;
+	NSString *serverAddress = _configuration.VPN.protocol.serverAddress;
+	return ([serverAddress length] > 0) ? serverAddress : @"Unknown";
 }
 
 -(NSString *)protocol
