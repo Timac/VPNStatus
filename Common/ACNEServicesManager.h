@@ -13,16 +13,17 @@
 @class ACNEService;
 @class NEConfiguration;
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface ACNEServicesManager : NSObject
 
-@property (strong) NSMutableArray <ACNEService*>* neServices;
-@property (readonly, nonatomic) dispatch_queue_t neServiceQueue;
+@property (strong, nonnull) NSMutableArray <ACNEService*>* neServices;
+@property (readonly, nonatomic, nonnull) dispatch_queue_t neServiceQueue;
 
 /**
  Get the singleton object
  */
-+ (ACNEServicesManager *)sharedNEServicesManager;
++ (nonnull ACNEServicesManager *)sharedNEServicesManager;
 
 
 /**
@@ -31,3 +32,5 @@
 -(void) loadConfigurationsWithHandler:(void (^)(NSError * _Nullable error))handler;
 
 @end
+
+NS_ASSUME_NONNULL_END

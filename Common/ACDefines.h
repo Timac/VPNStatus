@@ -29,11 +29,14 @@ typedef struct ne_session_t *ne_session_t;
 //
 #define NESessionTypeVPN	1
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 //
 // Expose the ne_session_* APIs
 // See /usr/lib/system/libsystem_networkextension.dylib
 //
-extern ne_session_t ne_session_create(uuid_t serviceID, int sessionConfigType);
+extern ne_session_t ne_session_create(uuid_t _Nonnull serviceID, int sessionConfigType);
 extern void ne_session_release(ne_session_t session);
 extern void ne_session_start(ne_session_t session);
 extern void ne_session_stop(ne_session_t session);
@@ -105,4 +108,6 @@ extern SCNetworkConnectionStatus SCNetworkConnectionGetStatusFromNEStatus(ne_ses
 - (void)loadConfigurationsWithCompletionQueue:(dispatch_queue_t)completionQueue handler:(void (^)(NSArray<NEConfiguration *> * _Nullable configurations, NSError * _Nullable error))handler;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
