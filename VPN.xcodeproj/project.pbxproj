@@ -659,10 +659,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = Debug;
 		};
@@ -681,10 +677,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = Release;
 		};
