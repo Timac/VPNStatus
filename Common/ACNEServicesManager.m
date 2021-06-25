@@ -66,6 +66,12 @@
 	
 	for(NEConfiguration *neConfiguration in inConfigurations)
 	{
+		if(neConfiguration.VPN == nil)
+		{
+			// Never display the Little Snitch Content Filter Configuration
+			continue;
+		}
+		
 		ACNEService *service = [[ACNEService alloc] initWithConfiguration:neConfiguration];
 		[self.neServices addObject:service];
 	}
