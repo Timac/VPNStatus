@@ -10,6 +10,7 @@
 #import "ACNEService.h"
 #import "ACNEServicesManager.h"
 #import "ACPreferences.h"
+#import "CoreWLAN/CoreWLAN.h"
 
 @interface ACConnectionManager ()
 
@@ -224,7 +225,25 @@
 	{
 		if([alwaysConnectedServicesIdentifiers containsObject:[neService.configuration.identifier UUIDString]])
 		{
-			[neService connect];
+            BOOL shouldConnect = YES;
+            // Assuming we have any Wi-Fi interfaces available...
+            if([[CWWiFiClient interfaceNames] count] > 0)
+            {
+                CWInterface *wifi = [[CWWiFiClient sharedWiFiClient] interface];
+                NSArray<NSString *>* ignoredSSIDs = [[ACPreferences sharedPreferences] ignoredSSIDs];
+                
+                // ...if the current SSID exists, and it's in the list of ignored SSIDs...
+                if(wifi.ssid != nil && [ignoredSSIDs containsObject:wifi.ssid])
+                {
+                    // ...do not connect.
+                    shouldConnect = NO;
+                }
+            }
+                
+            if(shouldConnect)
+            {
+                [neService connect];
+            }
 		}
 	}
 }
