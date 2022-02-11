@@ -10,6 +10,8 @@
 #import "ACNEService.h"
 #import "ACNEServicesManager.h"
 #import "ACPreferences.h"
+
+// To get the current WiFi SSID (CWInterface)
 #import "CoreWLAN/CoreWLAN.h"
 
 @interface ACConnectionManager ()
@@ -213,6 +215,29 @@
 	}
 }
 
+
+/**
+	Return YES if the current WiFi SSID is in the list of SSIDs to ignore
+*/
+-(BOOL)shouldPreventAutoConnectOnCurrentSSID
+{
+	// Assuming we have any Wi-Fi interfaces available...
+	if([[CWWiFiClient interfaceNames] count] > 0)
+	{
+		CWInterface *wifi = [[CWWiFiClient sharedWiFiClient] interface];
+		NSArray<NSString *>* ignoredSSIDs = [[ACPreferences sharedPreferences] ignoredSSIDs];
+
+		// ...if the current SSID exists, and it's in the list of ignored SSIDs...
+		if(wifi.ssid != nil && [ignoredSSIDs containsObject:wifi.ssid])
+		{
+			// ...do not connect.
+			return YES;
+		}
+	}
+
+	return NO;
+}
+
 -(void)connectAllAutoConnectedServices
 {
 	NSArray<NSString *>*alwaysConnectedServicesIdentifiers = [[ACPreferences sharedPreferences] alwaysConnectedServicesIdentifiers];
@@ -226,23 +251,16 @@
 		if([alwaysConnectedServicesIdentifiers containsObject:[neService.configuration.identifier UUIDString]])
 		{
             BOOL shouldConnect = YES;
-            // Assuming we have any Wi-Fi interfaces available...
-            if([[CWWiFiClient interfaceNames] count] > 0)
+
+            // If the current WiFi SSID is is the list of ignored SSID, we shouldn't auto connect
+            if([self shouldPreventAutoConnectOnCurrentSSID])
             {
-                CWInterface *wifi = [[CWWiFiClient sharedWiFiClient] interface];
-                NSArray<NSString *>* ignoredSSIDs = [[ACPreferences sharedPreferences] ignoredSSIDs];
-                
-                // ...if the current SSID exists, and it's in the list of ignored SSIDs...
-                if(wifi.ssid != nil && [ignoredSSIDs containsObject:wifi.ssid])
-                {
-                    // ...do not connect.
-                    shouldConnect = NO;
-                }
+				shouldConnect = NO;
             }
-                
+
             if(shouldConnect)
             {
-                [neService connect];
+				[neService connect];
             }
 		}
 	}
