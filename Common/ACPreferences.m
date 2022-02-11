@@ -14,6 +14,7 @@
 NSString * const kServicesPrefKey = @"Services";
 NSString * const kServiceIdentifierKey = @"Identifier";
 NSString * const kServiceAlwaysConnectedKey = @"AlwaysConnected";
+NSString * const kServiceIgnoredSSIDsKey = @"IgnoredSSIDs";
 
 NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay";
 
@@ -86,6 +87,21 @@ NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay
 	}
 	
 	[[NSUserDefaults standardUserDefaults] setObject:services forKey:kServicesPrefKey];
+}
+
+/**
+ Gets the list of SSIDs that should be ignored for the
+ purposes of automatic connection. Note that this is input
+ using:
+ 
+ defaults write org.timac.VPNStatus IgnoredSSIDs "FirstSSD,Second,Third"
+ 
+ Also note that the SSID is ignored irrespective of the VPN service.
+ */
+-(NSArray<NSString *> *)ignoredSSIDs
+{
+    NSString *ignoredSSIDsString = [[NSUserDefaults standardUserDefaults] stringForKey:kServiceIgnoredSSIDsKey];
+    return [ignoredSSIDsString componentsSeparatedByString:@","];
 }
 
 -(NSInteger)alwaysConnectedRetryDelay

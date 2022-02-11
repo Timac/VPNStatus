@@ -23,6 +23,11 @@
  */
 -(NSArray<NSString *>*)alwaysConnectedServicesIdentifiers;
 
+/**
+ Return the list of ignored SSIDs for the current service identifier
+ */
+-(NSArray<NSString *>*)ignoredSSIDs;
+
 
 /**
  Enable or disable auto connect for the VPN service
