@@ -316,7 +316,7 @@
 		FA53906020EF5F7F00BA9AF7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = Timac;
 				TargetAttributes = {
 					0204472420F001A400B31904 = {
