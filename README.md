@@ -38,6 +38,6 @@ defaults write org.timac.VPNStatus IgnoredSSIDs "OneSSID,SecondSSID,Third SSID"
 
 With the above example, if the current Wi-Fi network SSID is `OneSSID`, `SecondSSID`, or `Third SSID`, then the VPN will **not** autoconnect.
 
-If the Wi-Fi network SSID is, say, `FourthSSID`, the VPN service **will** autoconnect, becuase it is not on the list.
+If the Wi-Fi network SSID is, say, `FourthSSID`, the VPN service **will** autoconnect, because it is not on the list.
 
 Note that SSIDs **are** case-sensitive.
