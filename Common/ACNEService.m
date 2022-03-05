@@ -37,7 +37,7 @@
 
 - (void)dealloc
 {
-	ne_session_set_event_handler(_session, [[ACNEServicesManager sharedNEServicesManager] neServiceQueue], ^(xpc_object_t result)
+	ne_session_set_event_handler(_session, [[ACNEServicesManager sharedNEServicesManager] neServiceQueue], ^(ne_session_event_t event, void *event_data)
 	{
 		// Nothing
 	});
@@ -100,7 +100,7 @@
 
 -(void)setupEventCallback
 {
-	ne_session_set_event_handler(_session, [[ACNEServicesManager sharedNEServicesManager] neServiceQueue], ^(xpc_object_t result)
+	ne_session_set_event_handler(_session, [[ACNEServicesManager sharedNEServicesManager] neServiceQueue], ^(ne_session_event_t event, void *event_data)
 	{
 		[self refreshSession];
 	});

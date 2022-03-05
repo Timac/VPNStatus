@@ -46,7 +46,8 @@ extern void ne_session_cancel(ne_session_t session);
 // Expose the ne_session_set_event_handler API
 // See /usr/lib/system/libsystem_networkextension.dylib
 //
-typedef void (^ne_session_set_event_handler_block)(xpc_object_t result);
+typedef int ne_session_event_t;
+typedef void (^ne_session_set_event_handler_block)(ne_session_event_t event, void *event_data);
 extern void ne_session_set_event_handler(ne_session_t session, dispatch_queue_t queue, ne_session_set_event_handler_block block);
 
 
