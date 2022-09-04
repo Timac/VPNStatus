@@ -1,6 +1,30 @@
 # VPNStatus
 VPNStatus, a replacement for macOS builtin VPN Status
 
+<div align="center">
+<!-- shields -->
+<!-- downloads -->
+<a href="https://github.com/Timac/VPNStatus/releases">
+<img src="https://img.shields.io/github/downloads/Timac/VPNStatus/total.svg?style=flat" alt="downloads"/>
+</a>
+<!-- version -->
+<a href="https://github.com/Timac/VPNStatus/releases">
+<img src="https://img.shields.io/github/release-pre/Timac/VPNStatus.svg?style=flat" alt="latest version"/>
+</a>
+<!-- license -->
+<a href="https://github.com/Timac/VPNStatus/blob/master/LICENSE.txt">
+<img src="https://img.shields.io/github/license/Timac/VPNStatus.svg?style=flat" alt="license"/>
+</a>
+<!-- platform -->
+<a href="https://github.com/Timac/VPNStatus">
+<img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat" alt="platform"/>
+</a>
+
+<br/>
+<br/>
+</div>
+
+
 # Blog post
 [https://blog.timac.org/2018/0719-vpnstatus/](https://blog.timac.org/2018/0719-vpnstatus/)
 
