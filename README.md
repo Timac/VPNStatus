@@ -1,6 +1,8 @@
 # VPNStatus
 VPNStatus, a replacement for macOS builtin VPN Status
 
+Blog post: [https://blog.timac.org/2018/0719-vpnstatus/](https://blog.timac.org/2018/0719-vpnstatus/)
+
 <div align="center">
 <!-- shields -->
 <!-- downloads -->
@@ -25,8 +27,6 @@ VPNStatus, a replacement for macOS builtin VPN Status
 </div>
 
 
-# Blog post
-[https://blog.timac.org/2018/0719-vpnstatus/](https://blog.timac.org/2018/0719-vpnstatus/)
 
 # Description
 VPNStatus, an application that replicates some functionalities of macOS built-in VPN status menu:
