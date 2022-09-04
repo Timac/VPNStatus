@@ -35,6 +35,7 @@ VPNStatus, an application that replicates some functionalities of macOS built-in
 - connect to a VPN service
 - disconnect from a VPN service
 - possibility to auto connect to a VPN service if the application is running
+- Completely free ([donations welcome](https://github.com/sponsors/Timac)) with the source code transparently available
 
 # Retry Delay
 
