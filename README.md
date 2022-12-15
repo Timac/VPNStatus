@@ -48,6 +48,8 @@ VPNStatus tries to reconnect to the VPN every 120s by default. You can change th
 defaults write org.timac.VPNStatus AlwaysConnectedRetryDelay -int 30
 ```
 
+Note that the minimum valid value for `AlwaysConnectedRetryDelay` is 11. If you use a lower value, the default value (120s) will be used.
+
 # Ignored SSIDs
 
 VPNStatus can optionally ignore one or more SSIDs, such that services are **not** autoconnected when the current Wi-Fi SSID is on the ignored list.
