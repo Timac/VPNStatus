@@ -124,6 +124,12 @@
 			NSArray<NSString *>*alwaysConnectedServicesIdentifiers = [[ACPreferences sharedPreferences] alwaysConnectedServicesIdentifiers];
 			for(NSString *serviceIdentifier in alwaysConnectedServicesIdentifiers)
 			{
+				// If the current WiFi SSID is is the list of ignored SSID, we shouldn't auto connect
+				if([self shouldPreventAutoConnectOnCurrentSSID])
+				{
+					continue;
+				}
+
 				[self startConnectionForService:serviceIdentifier];
 			}
 		}
