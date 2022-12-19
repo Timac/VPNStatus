@@ -460,6 +460,7 @@
 		0204472920F001A500B31904 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -471,6 +472,7 @@
 		0204472A20F001A500B31904 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.vpnutil;
