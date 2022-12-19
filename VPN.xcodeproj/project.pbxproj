@@ -463,6 +463,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.timac.vpnutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -472,6 +473,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = org.timac.vpnutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
