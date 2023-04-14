@@ -15,6 +15,7 @@ NSString * const kServicesPrefKey = @"Services";
 NSString * const kServiceIdentifierKey = @"Identifier";
 NSString * const kServiceAlwaysConnectedKey = @"AlwaysConnected";
 NSString * const kServiceIgnoredSSIDsKey = @"IgnoredSSIDs";
+NSString * const kServiceIgnoredVPNsKey = @"IgnoredVPNs";
 
 NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay";
 
@@ -102,6 +103,25 @@ NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay
 {
     NSString *ignoredSSIDsString = [[NSUserDefaults standardUserDefaults] stringForKey:kServiceIgnoredSSIDsKey];
     return [ignoredSSIDsString componentsSeparatedByString:@","];
+}
+
+/**
+ Gets the list of VPNs that shouldn't be displayed in VPNStatus. Example:
+ defaults write org.timac.VPNStatus IgnoredVPNs "Little Snitch,HiddenVPN,AnotherHiddenVPN"
+
+ By default, the Little Snitch Content Filter Configuration is hidden
+ */
+-(NSArray<NSString *> *)ignoredVPNs
+{
+	NSString *ignoredVPNsString = [[NSUserDefaults standardUserDefaults] stringForKey:kServiceIgnoredVPNsKey];
+	if(ignoredVPNsString == nil)
+	{
+		// Default preference
+		// Don't display the Little Snitch Content Filter Configuration
+		ignoredVPNsString = @"Little Snitch";
+	}
+	
+	return [ignoredVPNsString componentsSeparatedByString:@","];
 }
 
 -(NSInteger)alwaysConnectedRetryDelay

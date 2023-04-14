@@ -10,6 +10,7 @@
 
 #import "ACDefines.h"
 #import "ACNEService.h"
+#import "ACPreferences.h"
 
 @implementation ACNEServicesManager
 
@@ -63,12 +64,14 @@
 {
 	// Fill the array
 	[self.neServices removeAllObjects];
+
+	NSArray<NSString *>* ignoredVPNs = [[ACPreferences sharedPreferences] ignoredVPNs];
 	
 	for(NEConfiguration *neConfiguration in inConfigurations)
 	{
-		if(neConfiguration.VPN == nil)
+		if([ignoredVPNs containsObject:neConfiguration.name])
 		{
-			// Never display the Little Snitch Content Filter Configuration
+			// Don't show the VPNs that should be ignored
 			continue;
 		}
 		

@@ -27,6 +27,7 @@
 		02799F8020F0081F00675162 /* ACNEService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7C20F0081F00675162 /* ACNEService.m */; };
 		02799F8120F0081F00675162 /* ACNEServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7E20F0081F00675162 /* ACNEServicesManager.m */; };
 		02799F8220F0081F00675162 /* ACNEServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7E20F0081F00675162 /* ACNEServicesManager.m */; };
+		02E9618129E92F3E00D1D506 /* ACPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DFD20F7F7BE00099652 /* ACPreferences.m */; };
 		65DE11A62600FF2A003E05A8 /* ACDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7A20F0081F00675162 /* ACDefines.h */; };
 		65DE11A72600FF2A003E05A8 /* ACNEService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7B20F0081F00675162 /* ACNEService.h */; };
 		65DE11A82600FF2A003E05A8 /* ACNEServicesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7D20F0081F00675162 /* ACNEServicesManager.h */; };
@@ -392,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E9618129E92F3E00D1D506 /* ACPreferences.m in Sources */,
 				02799F8020F0081F00675162 /* ACNEService.m in Sources */,
 				02799F8220F0081F00675162 /* ACNEServicesManager.m in Sources */,
 				02799F7620F0080E00675162 /* main.m in Sources */,

@@ -30,6 +30,12 @@
 
 
 /**
+ Return the list of VPN to ignore
+ */
+-(NSArray<NSString *>*)ignoredVPNs;
+
+
+/**
  Enable or disable auto connect for the VPN service
  */
 -(void)setAlwaysConnected:(BOOL)inAlwaysConnected forServicesIdentifier:(NSString *)inServiceIdentifier;
