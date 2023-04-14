@@ -97,16 +97,16 @@
 		NSInteger currentPauseDuration = [[ACConnectionManager sharedManager] currentPauseDuration];
 		if(currentPauseDuration > 0 && (inDuration == currentPauseDuration))
 		{
-			[outMenuItem setState:NSOnState];
+			[outMenuItem setState:NSControlStateValueOn];
 		}
 		else
 		{
-			[outMenuItem setState:NSOffState];
+			[outMenuItem setState:NSControlStateValueOff];
 		}
 	}
 	else
 	{
-		[outMenuItem setState:NSOffState];
+		[outMenuItem setState:NSControlStateValueOff];
 	}
 	
 	return outMenuItem;
@@ -218,11 +218,11 @@
 			NSArray<NSString *>*alwaysConnectedServices = [[ACPreferences sharedPreferences] alwaysConnectedServicesIdentifiers];
 			if([alwaysConnectedServices containsObject:[neService.configuration.identifier UUIDString]])
 			{
-				[alwaysAutoConnectMenuItem setState: NSOnState];
+				[alwaysAutoConnectMenuItem setState: NSControlStateValueOn];
 			}
 			else
 			{
-				[alwaysAutoConnectMenuItem setState: NSOffState];
+				[alwaysAutoConnectMenuItem setState: NSControlStateValueOff];
 			}
 			
 			[menu addItem:alwaysAutoConnectMenuItem];
