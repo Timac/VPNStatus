@@ -12,7 +12,7 @@
 #import "ACNEService.h"
 #import "ACNEServicesManager.h"
 
-static void PrintUsage()
+static void PrintUsage(void)
 {
 	fprintf(stderr, "Usage: vpnutil [start|stop] [VPN name]\n");
 	fprintf(stderr, "Examples:\n");
