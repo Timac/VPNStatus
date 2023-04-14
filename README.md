@@ -68,3 +68,14 @@ With the above example, if the current Wi-Fi network SSID is `OneSSID`, `SecondS
 If the Wi-Fi network SSID is, say, `FourthSSID`, the VPN service **will** autoconnect, because it is not on the list.
 
 Note that SSIDs **are** case-sensitive.
+
+
+# Hide VPNs
+
+There are some VPN configurations that you might not want to see in VPNStatus. This is the case of third-party content filter configurations like Little Snitch. 
+
+By default, VPNStatus will hide the Little Snitch content filter configuration. You can override the preference to hide more VPN configurations. Example:
+
+```
+defaults write org.timac.VPNStatus IgnoredVPNs "Little Snitch,HiddenVPN,AnotherHiddenVPN"
+```
