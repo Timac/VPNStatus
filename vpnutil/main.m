@@ -237,10 +237,53 @@ int main(int argc, const char * argv[])
 		
         if (listService)
         {
-            for(ACNEService *neService in neServices)
-            {
-                printf("%s %s\n", [neService.name UTF8String], [GetDescriptionForSCNetworkConnectionStatus(neService.state) UTF8String]);
-            }
+			/*
+			 Output a json like this:
+			 {
+				"VPNs": [
+					{
+						"name": "VPN1",
+						"status": "Connected"
+					},
+					 {
+						 "name": "VPN2",
+						 "status": "Disconnected"
+					 },
+					 {
+						 "name": "VPN3",
+						 "status": "Disconnected"
+					 }
+				]
+			 }
+			 */
+            NSMutableArray *vpnsArray = [[NSMutableArray alloc] init];
+			for(ACNEService *neService in neServices)
+			{
+				NSDictionary *vpnDict = [NSDictionary dictionaryWithObjectsAndKeys:
+										 neService.name, @"name",
+										 GetDescriptionForSCNetworkConnectionStatus(neService.state), @"status",
+										 nil];
+
+				[vpnsArray addObject:vpnDict];
+			}
+
+			NSMutableDictionary *jsonDictionary = [[NSMutableDictionary alloc] init];
+			if ([vpnsArray count] > 0)
+			{
+				[jsonDictionary setObject:vpnsArray forKey:@"VPNs"];
+			}
+
+			NSError *jsonError = nil;
+			NSData* jsonData = [NSJSONSerialization dataWithJSONObject:jsonDictionary options:NSJSONWritingPrettyPrinted error:&jsonError];
+			if (jsonData != nil)
+			{
+				NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+				printf("%s\n", [jsonString UTF8String]);
+			}
+			else
+			{
+				printf("An error occurred: %s\n", [[jsonError localizedDescription] UTF8String]);
+			}
         }
         else if(foundNEService)
 		{
