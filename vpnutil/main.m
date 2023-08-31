@@ -14,7 +14,7 @@
 
 static void PrintUsage(void)
 {
-	fprintf(stderr, "Usage: vpnutil [start|stop] [VPN name]\n");
+	fprintf(stderr, "Usage: vpnutil [start|stop|list|status] [VPN name]\n");
 	fprintf(stderr, "Examples:\n");
 	fprintf(stderr, "\t To start the VPN called 'MyVPN':\n");
 	fprintf(stderr, "\t vpnutil start MyVPN\n");
