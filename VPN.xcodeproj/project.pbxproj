@@ -27,6 +27,7 @@
 		02799F8020F0081F00675162 /* ACNEService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7C20F0081F00675162 /* ACNEService.m */; };
 		02799F8120F0081F00675162 /* ACNEServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7E20F0081F00675162 /* ACNEServicesManager.m */; };
 		02799F8220F0081F00675162 /* ACNEServicesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02799F7E20F0081F00675162 /* ACNEServicesManager.m */; };
+		028DF1172AC7FA200084A822 /* ACLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 028DF1142AC7FA200084A822 /* ACLocationManager.m */; };
 		02E9618129E92F3E00D1D506 /* ACPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DFD20F7F7BE00099652 /* ACPreferences.m */; };
 		65DE11A62600FF2A003E05A8 /* ACDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7A20F0081F00675162 /* ACDefines.h */; };
 		65DE11A72600FF2A003E05A8 /* ACNEService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02799F7B20F0081F00675162 /* ACNEService.h */; };
@@ -81,6 +82,8 @@
 		02799F7C20F0081F00675162 /* ACNEService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNEService.m; sourceTree = "<group>"; };
 		02799F7D20F0081F00675162 /* ACNEServicesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACNEServicesManager.h; sourceTree = "<group>"; };
 		02799F7E20F0081F00675162 /* ACNEServicesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNEServicesManager.m; sourceTree = "<group>"; };
+		028DF1142AC7FA200084A822 /* ACLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACLocationManager.m; sourceTree = "<group>"; };
+		028DF1152AC7FA200084A822 /* ACLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACLocationManager.h; sourceTree = "<group>"; };
 		65DE11952600FE38003E05A8 /* libVPNUtil.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libVPNUtil.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CBC4E527B5CDCA00D25554 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
 		FA53906820EF5F7F00BA9AF7 /* VPNApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +174,8 @@
 				02619DFD20F7F7BE00099652 /* ACPreferences.m */,
 				0231297920F9F8CE003F7540 /* ACConnectionManager.h */,
 				0231297A20F9F8CE003F7540 /* ACConnectionManager.m */,
+				028DF1152AC7FA200084A822 /* ACLocationManager.h */,
+				028DF1142AC7FA200084A822 /* ACLocationManager.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				02619DF720F7E23800099652 /* ACNEServicesManager.m in Sources */,
 				02619DF620F7E23600099652 /* ACNEService.m in Sources */,
 				02619DFF20F7F7BF00099652 /* ACPreferences.m in Sources */,
+				028DF1172AC7FA200084A822 /* ACLocationManager.m in Sources */,
 				0231297C20F9F8CF003F7540 /* ACConnectionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,5 +31,11 @@ blog.timac.org</string>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSLocationUsageDescription</key>
+	<string>$(PRODUCT_NAME) requires location access to read the WiFi SSID.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>$(PRODUCT_NAME) requires location access to read the WiFi SSID.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(PRODUCT_NAME) requires location access to read the WiFi SSID.</string>
 </dict>
 </plist>

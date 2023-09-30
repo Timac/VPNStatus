@@ -13,6 +13,7 @@
 #import "ACNEServicesManager.h"
 #import "ACPreferences.h"
 #import "ACConnectionManager.h"
+#import "ACLocationManager.h"
 
 @interface AppDelegate ()
 
@@ -36,6 +37,7 @@
 	
 	// Register for notifications to refresh the UI
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMenu) name:kSessionStateChangedNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMenu) name:kACLocationManagerAuthorizationDidChange object:nil];
 
 	// Make sure that the ACNEServicesManager singleton is created and load the configurations
 	[[ACNEServicesManager sharedNEServicesManager] loadConfigurationsWithHandler:^(NSError * error)
@@ -231,7 +233,27 @@
 		
 		[menu addItem:[NSMenuItem separatorItem]];
 	}
-	
+
+	// Tell the user that Location Services access is needed in order to read the current Wi-Fi SSID on macOS 14 Sonoma
+	CLAuthorizationStatus authorizationStatus = [[ACLocationManager sharedLocationManager] authorizationStatus];
+	switch (authorizationStatus) {
+		case kCLAuthorizationStatusNotDetermined:
+			[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Location Services access is needed to read the Wi-Fi SSID" action:nil keyEquivalent:@""]];
+			[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Grant permission…" action:@selector(requestLocationAccess:) keyEquivalent:@""]];
+			[menu addItem:[NSMenuItem separatorItem]];
+			break;
+
+		case kCLAuthorizationStatusRestricted:
+		case kCLAuthorizationStatusDenied:
+			[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Location Services access is needed to read the Wi-Fi SSID" action:nil keyEquivalent:@""]];
+			[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Open Location Services preferences…" action:@selector(openLocationAccessSettings:) keyEquivalent:@""]];
+			[menu addItem:[NSMenuItem separatorItem]];
+			break;
+
+		case kCLAuthorizationStatusAuthorizedAlways:
+			break;
+	}
+
 	// Other menu items
 	[menu addItem:[[NSMenuItem alloc] initWithTitle:@"About VPNStatus" action:@selector(doAbout:) keyEquivalent:@""]];
 	[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Website…" action:@selector(openWebsite:) keyEquivalent:@""]];
@@ -268,6 +290,17 @@
 		ACNEService *neService = neServices[selectedItemIndex];
 		[neService disconnect];
 	}
+}
+
+-(IBAction)requestLocationAccess:(id)sender
+{
+	[[ACLocationManager sharedLocationManager] requestAlwaysAuthorizationIfNeeded];
+}
+
+-(IBAction)openLocationAccessSettings:(id)sender
+{
+	NSURL *url = [NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_LocationServices"];
+	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 -(IBAction)doAbout:(id)sender
