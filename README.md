@@ -69,6 +69,8 @@ If the Wi-Fi network SSID is, say, `FourthSSID`, the VPN service **will** autoco
 
 Note that SSIDs **are** case-sensitive.
 
+Starting in macOS 14 Sonoma, reading the Wi-Fi SSID requires Location Services access. Without the Location Services access enabled, VPNStatus can't ignore SSIDs while autoconnecting. VPNStatus now checks the Location Services authorization and displays a menu item to grant the permissions.
+
 
 # Hide VPNs
 
