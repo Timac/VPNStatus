@@ -47,7 +47,7 @@ You can download and install a precompiled and signed version of VPNStatus and v
 
 ## Homebrew
 
-It is possibile to use Homebrew:
+Alternatively, you can use Homebrew:
 
 ```
 brew tap timac/vpnstatus
