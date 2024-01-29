@@ -37,6 +37,25 @@ VPNStatus, an application that replicates some functionalities of macOS built-in
 - possibility to auto connect to a VPN service if the application is running
 - Completely free ([donations welcome](https://github.com/sponsors/Timac)) with the source code transparently available
 
+# Installation
+
+
+## Precompiled
+
+You can download and install a precompiled and signed version of VPNStatus and vpnutil at [https://github.com/Timac/VPNStatus/releases](https://github.com/Timac/VPNStatus/releases).
+
+
+## Homebrew
+
+It is possibile to use Homebrew:
+
+```
+brew tap timac/vpnstatus
+brew install timac/vpnstatus/vpnutil
+brew install --cask timac/vpnstatus/vpnstatus
+```
+
+
 # Retry Delay
 
 VPNStatus tries to reconnect to the VPN every 120s by default. You can change this value using a secret preference. To change the retry delay to 30s:
