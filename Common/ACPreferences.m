@@ -127,13 +127,21 @@ NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay
 -(NSInteger)alwaysConnectedRetryDelay
 {
 	NSInteger retryDelay = [[NSUserDefaults standardUserDefaults] integerForKey:kAlwaysConnectedRetryDelayPrefKey];
-	if(retryDelay <= 10)
+	if(retryDelay <= 0)
 	{
 		// Default is 120s
 		retryDelay = 120;
 	}
 	
 	return retryDelay;
+}
+
+-(void)setAlwaysConnectedRetryDelay:(NSInteger)retryDelay
+{
+	if (retryDelay > 0 && retryDelay <= 240)
+	{
+		[[NSUserDefaults standardUserDefaults] setInteger:retryDelay forKey:kAlwaysConnectedRetryDelayPrefKey];
+	}
 }
 
 @end

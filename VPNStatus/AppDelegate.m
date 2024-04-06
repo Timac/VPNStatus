@@ -12,6 +12,7 @@
 #import "ACNEService.h"
 #import "ACNEServicesManager.h"
 #import "ACPreferences.h"
+#import "ACPreferencesWindowController.h"
 #import "ACConnectionManager.h"
 #import "ACLocationManager.h"
 
@@ -255,8 +256,7 @@
 	}
 
 	// Other menu items
-	[menu addItem:[[NSMenuItem alloc] initWithTitle:@"About VPNStatus" action:@selector(doAbout:) keyEquivalent:@""]];
-	[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Website…" action:@selector(openWebsite:) keyEquivalent:@""]];
+	[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Settings…" action:@selector(openSettings:) keyEquivalent:@","]];
 	[menu addItem:[NSMenuItem separatorItem]];
 	[menu addItem:[[NSMenuItem alloc] initWithTitle:@"Quit VPNStatus" action:@selector(doQuit:) keyEquivalent:@"q"]];
 	
@@ -303,14 +303,9 @@
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
--(IBAction)doAbout:(id)sender
+-(IBAction)openSettings:(id)sender
 {
-	[NSApp orderFrontStandardAboutPanel:self];
-}
-
--(IBAction)openWebsite:(id)sender
-{
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://blog.timac.org"]];
+	[[ACPreferencesWindowController sharedWindowController] showWindow:self];
 }
 
 -(IBAction)doQuit:(id)sender

@@ -46,6 +46,7 @@
  Default is 120s
  */
 -(NSInteger)alwaysConnectedRetryDelay;
+-(void)setAlwaysConnectedRetryDelay:(NSInteger)retryDelay;
 
 
 @end

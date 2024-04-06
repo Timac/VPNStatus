@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0231297B20F9F8CF003F7540 /* ACConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231297A20F9F8CE003F7540 /* ACConnectionManager.m */; };
 		0231297C20F9F8CF003F7540 /* ACConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0231297A20F9F8CE003F7540 /* ACConnectionManager.m */; };
+		024D8FCE2BC1DE38005BF977 /* ACPreferencesGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */; };
+		024D8FCF2BC1DE38005BF977 /* ACPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D8FCC2BC1DE38005BF977 /* ACPreferencesWindow.xib */; };
+		024D8FD62BC1DF32005BF977 /* ACPreferencesGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FD12BC1DF32005BF977 /* ACPreferencesGeneralViewController.m */; };
+		024D8FD72BC1DF32005BF977 /* ACPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FD32BC1DF32005BF977 /* ACPreferencesWindowController.m */; };
+		024D8FDA2BC1E6FC005BF977 /* ACPreferencesAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FD92BC1E6FC005BF977 /* ACPreferencesAboutViewController.m */; };
+		024D8FDD2BC1E719005BF977 /* ACPreferencesAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */; };
 		02619DE820F7DF2200099652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DE720F7DF2200099652 /* AppDelegate.m */; };
 		02619DEA20F7DF2400099652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02619DE920F7DF2400099652 /* Assets.xcassets */; };
 		02619DED20F7DF2400099652 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02619DEB20F7DF2400099652 /* MainMenu.xib */; };
@@ -65,6 +71,16 @@
 		0204472520F001A400B31904 /* vpnutil */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vpnutil; sourceTree = BUILT_PRODUCTS_DIR; };
 		0231297920F9F8CE003F7540 /* ACConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACConnectionManager.h; sourceTree = "<group>"; };
 		0231297A20F9F8CE003F7540 /* ACConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACConnectionManager.m; sourceTree = "<group>"; };
+		024D8FCB2BC1DE38005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACPreferencesGeneralView.xib; sourceTree = "<group>"; };
+		024D8FCD2BC1DE38005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACPreferencesWindow.xib; sourceTree = "<group>"; };
+		024D8FD02BC1DF32005BF977 /* ACPreferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPreferencesGeneralViewController.h; sourceTree = "<group>"; };
+		024D8FD12BC1DF32005BF977 /* ACPreferencesGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPreferencesGeneralViewController.m; sourceTree = "<group>"; };
+		024D8FD22BC1DF32005BF977 /* ACPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPreferencesWindowController.h; sourceTree = "<group>"; };
+		024D8FD32BC1DF32005BF977 /* ACPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPreferencesWindowController.m; sourceTree = "<group>"; };
+		024D8FD42BC1DF32005BF977 /* ACPreferencesWindowControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPreferencesWindowControllerProtocol.h; sourceTree = "<group>"; };
+		024D8FD82BC1E6FB005BF977 /* ACPreferencesAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPreferencesAboutViewController.h; sourceTree = "<group>"; };
+		024D8FD92BC1E6FC005BF977 /* ACPreferencesAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPreferencesAboutViewController.m; sourceTree = "<group>"; };
+		024D8FDC2BC1E719005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACPreferencesAboutView.xib; sourceTree = "<group>"; };
 		02619DE420F7DF2200099652 /* VPNStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02619DE620F7DF2200099652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		02619DE720F7DF2200099652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -148,13 +164,31 @@
 			path = vpnutil;
 			sourceTree = "<group>";
 		};
+		024D8FD52BC1DF32005BF977 /* PreferencesUI */ = {
+			isa = PBXGroup;
+			children = (
+				024D8FD02BC1DF32005BF977 /* ACPreferencesGeneralViewController.h */,
+				024D8FD12BC1DF32005BF977 /* ACPreferencesGeneralViewController.m */,
+				024D8FD82BC1E6FB005BF977 /* ACPreferencesAboutViewController.h */,
+				024D8FD92BC1E6FC005BF977 /* ACPreferencesAboutViewController.m */,
+				024D8FD22BC1DF32005BF977 /* ACPreferencesWindowController.h */,
+				024D8FD32BC1DF32005BF977 /* ACPreferencesWindowController.m */,
+				024D8FD42BC1DF32005BF977 /* ACPreferencesWindowControllerProtocol.h */,
+			);
+			path = PreferencesUI;
+			sourceTree = "<group>";
+		};
 		02619DE520F7DF2200099652 /* VPNStatus */ = {
 			isa = PBXGroup;
 			children = (
 				02619DE620F7DF2200099652 /* AppDelegate.h */,
 				02619DE720F7DF2200099652 /* AppDelegate.m */,
+				024D8FD52BC1DF32005BF977 /* PreferencesUI */,
 				02619DE920F7DF2400099652 /* Assets.xcassets */,
 				02619DEB20F7DF2400099652 /* MainMenu.xib */,
+				024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */,
+				024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */,
+				024D8FCC2BC1DE38005BF977 /* ACPreferencesWindow.xib */,
 				02619DEE20F7DF2400099652 /* Info.plist */,
 				02619DEF20F7DF2400099652 /* main.m */,
 				02619DF120F7DF2400099652 /* VPNStatus.entitlements */,
@@ -376,9 +410,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024D8FCE2BC1DE38005BF977 /* ACPreferencesGeneralView.xib in Resources */,
+				024D8FCF2BC1DE38005BF977 /* ACPreferencesWindow.xib in Resources */,
 				02619DEA20F7DF2400099652 /* Assets.xcassets in Resources */,
 				02619DED20F7DF2400099652 /* MainMenu.xib in Resources */,
 				02619DFB20F7E26E00099652 /* icon.icns in Resources */,
+				024D8FDD2BC1E719005BF977 /* ACPreferencesAboutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +449,9 @@
 			files = (
 				02619DF020F7DF2400099652 /* main.m in Sources */,
 				02619DE820F7DF2200099652 /* AppDelegate.m in Sources */,
+				024D8FD62BC1DF32005BF977 /* ACPreferencesGeneralViewController.m in Sources */,
+				024D8FDA2BC1E6FC005BF977 /* ACPreferencesAboutViewController.m in Sources */,
+				024D8FD72BC1DF32005BF977 /* ACPreferencesWindowController.m in Sources */,
 				02619DF720F7E23800099652 /* ACNEServicesManager.m in Sources */,
 				02619DF620F7E23600099652 /* ACNEService.m in Sources */,
 				02619DFF20F7F7BF00099652 /* ACPreferences.m in Sources */,
@@ -447,6 +487,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				024D8FCB2BC1DE38005BF977 /* Base */,
+			);
+			name = ACPreferencesGeneralView.xib;
+			sourceTree = "<group>";
+		};
+		024D8FCC2BC1DE38005BF977 /* ACPreferencesWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				024D8FCD2BC1DE38005BF977 /* Base */,
+			);
+			name = ACPreferencesWindow.xib;
+			sourceTree = "<group>";
+		};
+		024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				024D8FDC2BC1E719005BF977 /* Base */,
+			);
+			name = ACPreferencesAboutView.xib;
+			sourceTree = "<group>";
+		};
 		02619DEB20F7DF2400099652 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
