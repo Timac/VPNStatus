@@ -28,7 +28,7 @@ static void PrintUsage(void)
     fprintf(stderr, "\t To get the status of the VPN called 'MyVPN':\n");
     fprintf(stderr, "\t vpnutil status MyVPN\n");
     fprintf(stderr, "\n");
-	fprintf(stderr, "Copyright © 2018-2023 Alexandre Colucci\nblog.timac.org\n");
+	fprintf(stderr, "Copyright © 2018-2024 Alexandre Colucci\nblog.timac.org\n");
 	fprintf(stderr, "\n");
 	
 	exit(1);
