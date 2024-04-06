@@ -38,7 +38,12 @@
     return @"About";
 }
 
--(IBAction)openWebsite:(id)sender
+-(IBAction)openGitHub:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/Timac/VPNStatus"]];
+}
+
+-(IBAction)openBlog:(id)sender
 {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://blog.timac.org"]];
 }

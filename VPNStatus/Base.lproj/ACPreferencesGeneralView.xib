@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K3Q-df-0o3">
-                    <rect key="frame" x="22" y="259" width="78" height="16"/>
+                    <rect key="frame" x="18" y="259" width="78" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Retry Delay:" id="c4R-ke-SFN">
                         <font key="font" usesAppearanceFont="YES"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -28,7 +28,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5O-D3-mgT">
-                    <rect key="frame" x="106" y="257" width="60" height="21"/>
+                    <rect key="frame" x="102" y="257" width="60" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="YvO-Ic-mF5"/>
                     </constraints>
@@ -46,7 +46,7 @@
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="59l-qm-2nr">
-                    <rect key="frame" x="168" y="259" width="11" height="16"/>
+                    <rect key="frame" x="164" y="259" width="11" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="s" id="aVA-4k-mIU">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -54,7 +54,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dkf-TQ-yQo">
-                    <rect key="frame" x="22" y="226" width="386" height="16"/>
+                    <rect key="frame" x="18" y="226" width="386" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="VPNStatus tries to reconnect to the VPN every 120s by default." id="fsO-os-8rb">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -67,7 +67,7 @@
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dkf-TQ-yQo" secondAttribute="trailing" id="8sv-Rj-crD"/>
                 <constraint firstItem="K3Q-df-0o3" firstAttribute="top" secondItem="6sE-tW-1JD" secondAttribute="top" constant="42" id="DNy-Bn-zQD"/>
                 <constraint firstItem="59l-qm-2nr" firstAttribute="leading" secondItem="q5O-D3-mgT" secondAttribute="trailing" constant="4" id="HDk-iS-M7S"/>
-                <constraint firstItem="K3Q-df-0o3" firstAttribute="leading" secondItem="6sE-tW-1JD" secondAttribute="leading" constant="24" id="L2x-U2-k9H"/>
+                <constraint firstItem="K3Q-df-0o3" firstAttribute="leading" secondItem="6sE-tW-1JD" secondAttribute="leading" constant="20" symbolic="YES" id="L2x-U2-k9H"/>
                 <constraint firstItem="Dkf-TQ-yQo" firstAttribute="top" secondItem="K3Q-df-0o3" secondAttribute="bottom" constant="17" id="M8F-cF-Kvx"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="59l-qm-2nr" secondAttribute="trailing" id="WNE-Vz-Bjk"/>
                 <constraint firstItem="K3Q-df-0o3" firstAttribute="leading" secondItem="Dkf-TQ-yQo" secondAttribute="leading" id="Xnj-Wx-ku5"/>

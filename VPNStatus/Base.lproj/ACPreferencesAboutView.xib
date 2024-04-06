@@ -51,27 +51,50 @@ blog.timac.org</string>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-E7-MTj">
-                    <rect key="frame" x="253" y="57" width="94" height="32"/>
-                    <buttonCell key="cell" type="push" title="Website…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OJf-hd-ene">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="openWebsite:" target="-2" id="4iU-yn-5AT"/>
-                    </connections>
-                </button>
+                <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="23" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BwR-pw-KDS">
+                    <rect key="frame" x="223" y="20" width="154" height="20"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-E7-MTj">
+                            <rect key="frame" x="-7" y="-7" width="87" height="32"/>
+                            <buttonCell key="cell" type="push" title="GitHub…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OJf-hd-ene">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="openGitHub:" target="-2" id="Z9u-4J-j10"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7me-cC-SoW">
+                            <rect key="frame" x="89" y="-7" width="72" height="32"/>
+                            <buttonCell key="cell" type="push" title="Blog…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s1v-fc-dzq">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="openBlog:" target="-2" id="fDE-L9-OaO"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="Dkf-TQ-yQo" firstAttribute="centerX" secondItem="6sE-tW-1JD" secondAttribute="centerX" id="6cb-5k-77J"/>
                 <constraint firstItem="Dkf-TQ-yQo" firstAttribute="top" secondItem="K3Q-df-0o3" secondAttribute="bottom" constant="8" symbolic="YES" id="M8F-cF-Kvx"/>
                 <constraint firstItem="45F-Uk-Brt" firstAttribute="top" secondItem="6sE-tW-1JD" secondAttribute="top" constant="20" symbolic="YES" id="Sxc-8o-yAk"/>
-                <constraint firstItem="1P7-E7-MTj" firstAttribute="centerX" secondItem="6sE-tW-1JD" secondAttribute="centerX" id="akT-sc-MJS"/>
                 <constraint firstItem="K3Q-df-0o3" firstAttribute="top" secondItem="45F-Uk-Brt" secondAttribute="bottom" constant="8" symbolic="YES" id="bBp-Ai-3nO"/>
                 <constraint firstItem="yL7-wI-Gad" firstAttribute="top" secondItem="Dkf-TQ-yQo" secondAttribute="bottom" constant="20" id="c4v-6Z-5j8"/>
                 <constraint firstItem="K3Q-df-0o3" firstAttribute="centerX" secondItem="6sE-tW-1JD" secondAttribute="centerX" id="dxR-5r-zQr"/>
                 <constraint firstItem="45F-Uk-Brt" firstAttribute="centerX" secondItem="6sE-tW-1JD" secondAttribute="centerX" id="fLH-kh-rBK"/>
-                <constraint firstAttribute="bottom" secondItem="1P7-E7-MTj" secondAttribute="bottom" constant="64" id="qtK-zm-dQp"/>
+                <constraint firstItem="BwR-pw-KDS" firstAttribute="centerX" secondItem="6sE-tW-1JD" secondAttribute="centerX" id="mTS-fV-7Ej"/>
+                <constraint firstAttribute="bottom" secondItem="BwR-pw-KDS" secondAttribute="bottom" constant="20" symbolic="YES" id="pNL-ZE-hO0"/>
                 <constraint firstItem="yL7-wI-Gad" firstAttribute="centerX" secondItem="6sE-tW-1JD" secondAttribute="centerX" id="rCJ-Ho-fBI"/>
             </constraints>
             <point key="canvasLocation" x="233" y="161.5"/>
