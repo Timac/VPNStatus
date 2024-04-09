@@ -6,6 +6,7 @@
 
 #import "ACPreferencesAboutViewController.h"
 #import "NSBundle+ACAppInfo.h"
+#import "ACCrossPromotionWindowController.h"
 
 @interface ACPreferencesAboutViewController ()
 
@@ -65,6 +66,11 @@
 -(IBAction)openBlog:(id)sender
 {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://blog.timac.org"]];
+}
+
+-(IBAction)doAppsFromSameDeveloper:(id)sender
+{
+	[[ACCrossPromotionWindowController sharedWindowController] showWindow:self];
 }
 
 @end

@@ -16,6 +16,8 @@
 		024D8FDA2BC1E6FC005BF977 /* ACPreferencesAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FD92BC1E6FC005BF977 /* ACPreferencesAboutViewController.m */; };
 		024D8FDD2BC1E719005BF977 /* ACPreferencesAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */; };
 		024D8FE12BC50D28005BF977 /* NSBundle+ACAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FDF2BC50D28005BF977 /* NSBundle+ACAppInfo.m */; };
+		024D8FE42BC51118005BF977 /* ACCrossPromotionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D8FE22BC51118005BF977 /* ACCrossPromotionWindow.xib */; };
+		024D8FE82BC5114A005BF977 /* ACCrossPromotionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FE62BC5114A005BF977 /* ACCrossPromotionWindowController.m */; };
 		02619DE820F7DF2200099652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DE720F7DF2200099652 /* AppDelegate.m */; };
 		02619DEA20F7DF2400099652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02619DE920F7DF2400099652 /* Assets.xcassets */; };
 		02619DED20F7DF2400099652 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02619DEB20F7DF2400099652 /* MainMenu.xib */; };
@@ -84,6 +86,9 @@
 		024D8FDC2BC1E719005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACPreferencesAboutView.xib; sourceTree = "<group>"; };
 		024D8FDF2BC50D28005BF977 /* NSBundle+ACAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ACAppInfo.m"; sourceTree = "<group>"; };
 		024D8FE02BC50D28005BF977 /* NSBundle+ACAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ACAppInfo.h"; sourceTree = "<group>"; };
+		024D8FE32BC51118005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACCrossPromotionWindow.xib; sourceTree = "<group>"; };
+		024D8FE52BC5114A005BF977 /* ACCrossPromotionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACCrossPromotionWindowController.h; sourceTree = "<group>"; };
+		024D8FE62BC5114A005BF977 /* ACCrossPromotionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCrossPromotionWindowController.m; sourceTree = "<group>"; };
 		02619DE420F7DF2200099652 /* VPNStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02619DE620F7DF2200099652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		02619DE720F7DF2200099652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,14 +188,25 @@
 			path = PreferencesUI;
 			sourceTree = "<group>";
 		};
+		024D8FE72BC5114A005BF977 /* CrossPromotion */ = {
+			isa = PBXGroup;
+			children = (
+				024D8FE52BC5114A005BF977 /* ACCrossPromotionWindowController.h */,
+				024D8FE62BC5114A005BF977 /* ACCrossPromotionWindowController.m */,
+			);
+			path = CrossPromotion;
+			sourceTree = "<group>";
+		};
 		02619DE520F7DF2200099652 /* VPNStatus */ = {
 			isa = PBXGroup;
 			children = (
 				02619DE620F7DF2200099652 /* AppDelegate.h */,
 				02619DE720F7DF2200099652 /* AppDelegate.m */,
+				024D8FE72BC5114A005BF977 /* CrossPromotion */,
 				024D8FD52BC1DF32005BF977 /* PreferencesUI */,
 				02619DE920F7DF2400099652 /* Assets.xcassets */,
 				02619DEB20F7DF2400099652 /* MainMenu.xib */,
+				024D8FE22BC51118005BF977 /* ACCrossPromotionWindow.xib */,
 				024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */,
 				024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */,
 				024D8FCC2BC1DE38005BF977 /* ACPreferencesWindow.xib */,
@@ -415,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024D8FE42BC51118005BF977 /* ACCrossPromotionWindow.xib in Resources */,
 				024D8FCE2BC1DE38005BF977 /* ACPreferencesGeneralView.xib in Resources */,
 				024D8FCF2BC1DE38005BF977 /* ACPreferencesWindow.xib in Resources */,
 				02619DEA20F7DF2400099652 /* Assets.xcassets in Resources */,
@@ -456,6 +473,7 @@
 				02619DE820F7DF2200099652 /* AppDelegate.m in Sources */,
 				024D8FE12BC50D28005BF977 /* NSBundle+ACAppInfo.m in Sources */,
 				024D8FD62BC1DF32005BF977 /* ACPreferencesGeneralViewController.m in Sources */,
+				024D8FE82BC5114A005BF977 /* ACCrossPromotionWindowController.m in Sources */,
 				024D8FDA2BC1E6FC005BF977 /* ACPreferencesAboutViewController.m in Sources */,
 				024D8FD72BC1DF32005BF977 /* ACPreferencesWindowController.m in Sources */,
 				02619DF720F7E23800099652 /* ACNEServicesManager.m in Sources */,
@@ -515,6 +533,14 @@
 				024D8FDC2BC1E719005BF977 /* Base */,
 			);
 			name = ACPreferencesAboutView.xib;
+			sourceTree = "<group>";
+		};
+		024D8FE22BC51118005BF977 /* ACCrossPromotionWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				024D8FE32BC51118005BF977 /* Base */,
+			);
+			name = ACCrossPromotionWindow.xib;
 			sourceTree = "<group>";
 		};
 		02619DEB20F7DF2400099652 /* MainMenu.xib */ = {
