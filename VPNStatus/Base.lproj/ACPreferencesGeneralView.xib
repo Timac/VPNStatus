@@ -8,7 +8,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ACPreferencesGeneralViewController">
             <connections>
-                <outlet property="marginsExportLeftField" destination="q5O-D3-mgT" id="Mqv-Td-lFq"/>
                 <outlet property="retryDelayField" destination="q5O-D3-mgT" id="P6H-Qj-cWL"/>
                 <outlet property="view" destination="6sE-tW-1JD" id="Fk7-dv-Doh"/>
             </connections>
@@ -42,7 +41,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="marginFieldDidChange:" target="-2" id="FXL-fQ-ZAH"/>
+                        <action selector="retryDelayDidChange:" target="-2" id="C9Q-HU-qgj"/>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="59l-qm-2nr">

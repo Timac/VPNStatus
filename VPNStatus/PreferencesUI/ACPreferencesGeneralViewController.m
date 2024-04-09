@@ -54,4 +54,10 @@
     return @"General";
 }
 
+- (IBAction)retryDelayDidChange:(id)sender
+{
+	NSInteger retryDelay = [sender integerValue];
+	[[ACPreferences sharedPreferences] setAlwaysConnectedRetryDelay:retryDelay];
+}
+
 @end

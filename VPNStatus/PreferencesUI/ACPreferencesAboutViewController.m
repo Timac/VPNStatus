@@ -5,8 +5,12 @@
 //  Copyright © 2024 Alexandre Colucci. All rights reserved.
 
 #import "ACPreferencesAboutViewController.h"
+#import "NSBundle+ACAppInfo.h"
 
 @interface ACPreferencesAboutViewController ()
+
+@property (weak) IBOutlet NSTextField *versionLabel;
+@property (weak) IBOutlet NSTextField *copyrightLabel;
 
 @end
 
@@ -26,6 +30,21 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+
+	NSString *appDisplayVersion = [NSBundle acAppDisplayVersion];
+	if([appDisplayVersion length] > 0)
+	{
+		[self.versionLabel setStringValue:[NSString stringWithFormat:@"Version %@", appDisplayVersion]];
+	}
+
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDateComponents *components = [calendar components:NSCalendarUnitYear fromDate:[NSDate date]];
+	NSInteger year = [components year];
+	if(year > 0)
+	{
+		NSString *copyrightFormatString = @"Copyright © 2018-%d Alexandre Colucci\nhttps://blog.timac.org";
+		[self.copyrightLabel setStringValue:[NSString stringWithFormat:copyrightFormatString, year]];
+	}
 }
 
 -(NSString*)identifier
