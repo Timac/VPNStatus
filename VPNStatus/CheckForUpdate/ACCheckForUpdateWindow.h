@@ -3,7 +3,7 @@
 @interface ACCheckForUpdateWindow : NSWindowController
 
 + (ACCheckForUpdateWindow *)sharedWindowController;
--(void)showUpdateAvailable:(NSString *)oldVersion newVersion:(NSString*)newVersion;
+-(void)showUpdateAvailable:(NSString *)oldVersion newVersion:(NSString*)newVersion releaseNotes:(NSString*)releaseNotes;
 
 @end
 

@@ -60,10 +60,10 @@
 
 	UpdateManager *manager = [UpdateManager shared];
 	NSString *skipVersion = [[ACPreferences sharedPreferences] checkForUpdateSkipVersion];
-	[manager checkForUpdateWithSkippedVersion:skipVersion completion:^(NSString * oldVersion, NSString * newVersion) {
+	[manager checkForUpdateWithSkippedVersion:skipVersion completion:^(NSString * oldVersion, NSString * newVersion, NSString * releaseNotes) {
 		if([oldVersion length] > 0 && [newVersion length] > 0)
 		{
-			[[ACCheckForUpdateWindow sharedWindowController] showUpdateAvailable:oldVersion newVersion:newVersion];
+			[[ACCheckForUpdateWindow sharedWindowController] showUpdateAvailable:oldVersion newVersion:newVersion releaseNotes:releaseNotes];
 		}
 	}];
 }

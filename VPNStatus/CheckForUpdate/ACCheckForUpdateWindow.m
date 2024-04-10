@@ -4,9 +4,11 @@
 @interface ACCheckForUpdateWindow ()
 
 @property (weak) IBOutlet NSTextField *versionsLabel;
+@property (weak) IBOutlet NSTextField *releaseNotesLabel;
 
 @property (strong) NSString *currentVersion;
 @property (strong) NSString *updateVersion;
+@property (strong) NSString *releaseNotes;
 
 @end
 
@@ -38,12 +40,22 @@
 	[super showWindow:sender];
 
 	[self.versionsLabel setStringValue:[NSString stringWithFormat:@"VPNStatus %@ is now available, you have %@.", self.updateVersion, self.currentVersion]];
+
+	if([self.releaseNotes length] > 0)
+	{
+		[self.releaseNotesLabel setStringValue:self.releaseNotes];
+	}
+	else
+	{
+		[self.releaseNotesLabel setStringValue:@""];
+	}
 }
 
--(void)showUpdateAvailable:(NSString *)oldVersion newVersion:(NSString*)newVersion
+-(void)showUpdateAvailable:(NSString *)oldVersion newVersion:(NSString*)newVersion releaseNotes:(NSString*)releaseNotes
 {
 	self.currentVersion = oldVersion;
 	self.updateVersion = newVersion;
+	self.releaseNotes = releaseNotes;
 	[self showWindow:self];
 }
 

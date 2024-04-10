@@ -17,16 +17,16 @@ import Foundation
 	override private init() {
 		let appShortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 		if let appShortVersion = appShortVersion {
-			currentRelease = GitHubRelease(name: appShortVersion, prerelease: false, draft: false)
+			currentRelease = GitHubRelease(name: appShortVersion, prerelease: false, draft: false, body: nil)
 		} else {
-			currentRelease = GitHubRelease(name: "1.0", prerelease: false, draft: false)
+			currentRelease = GitHubRelease(name: "1.0", prerelease: false, draft: false, body: nil)
 		}
 	}
 
-	@objc public func checkForUpdate(skippedVersion: String?, completion: @escaping (String?, String?) -> Void) {
+	@objc public func checkForUpdate(skippedVersion: String?, completion: @escaping (String?, String?, String?) -> Void) {
 		guard let gitHubURL = gitHubURL else {
 			DispatchQueue.main.async {
-				completion(nil, nil)
+				completion(nil, nil, nil)
 			}
 			return
 		}
@@ -56,11 +56,11 @@ import Foundation
 						debugPrint("A new version is available")
 
 						if let skippedVersion = skippedVersion {
-							let skippedRelease = GitHubRelease(name: skippedVersion, prerelease: false, draft: false)
+							let skippedRelease = GitHubRelease(name: skippedVersion, prerelease: false, draft: false, body: nil)
 							if lastRelease <= skippedRelease {
 								debugPrint("Skip the new version")
 								DispatchQueue.main.async {
-									completion(nil, nil)
+									completion(nil, nil, nil)
 								}
 
 								return
@@ -68,13 +68,13 @@ import Foundation
 						}
 
 						DispatchQueue.main.async {
-							completion(self.currentRelease.name, lastRelease.name)
+							completion(self.currentRelease.name, lastRelease.name, lastRelease.body)
 						}
 						return
 					} else {
 						// Already up-to-date
 						DispatchQueue.main.async {
-							completion(nil, nil)
+							completion(nil, nil, nil)
 						}
 						return
 					}
@@ -82,7 +82,7 @@ import Foundation
 			} else {
 				debugPrint("GitHub returned an empty data")
 				DispatchQueue.main.async {
-					completion(nil, nil)
+					completion(nil, nil, nil)
 					return
 				}
 			}

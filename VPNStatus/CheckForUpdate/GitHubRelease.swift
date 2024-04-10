@@ -12,6 +12,7 @@ public struct GitHubRelease: Decodable, Comparable {
 	let name: String
 	let prerelease: Bool
 	let draft: Bool
+	let body: String?
 
 	public static func < (lhs: GitHubRelease, rhs: GitHubRelease) -> Bool {
 		let components1 = lhs.components()
