@@ -18,6 +18,12 @@
 		024D8FE12BC50D28005BF977 /* NSBundle+ACAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FDF2BC50D28005BF977 /* NSBundle+ACAppInfo.m */; };
 		024D8FE42BC51118005BF977 /* ACCrossPromotionWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D8FE22BC51118005BF977 /* ACCrossPromotionWindow.xib */; };
 		024D8FE82BC5114A005BF977 /* ACCrossPromotionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FE62BC5114A005BF977 /* ACCrossPromotionWindowController.m */; };
+		024D8FFF2BC5E2DC005BF977 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D8FFE2BC5E2DC005BF977 /* UpdateManager.swift */; };
+		024D90092BC71C04005BF977 /* GitHubReleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D90082BC71C04005BF977 /* GitHubReleaseTests.swift */; };
+		024D90112BC71EA4005BF977 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D90002BC71157005BF977 /* GitHubRelease.swift */; };
+		024D90122BC72567005BF977 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D90002BC71157005BF977 /* GitHubRelease.swift */; };
+		024D90152BC72694005BF977 /* ACCheckForUpdateWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D90132BC72694005BF977 /* ACCheckForUpdateWindow.xib */; };
+		024D90182BC726B9005BF977 /* ACCheckForUpdateWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D90172BC726B9005BF977 /* ACCheckForUpdateWindow.m */; };
 		02619DE820F7DF2200099652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DE720F7DF2200099652 /* AppDelegate.m */; };
 		02619DEA20F7DF2400099652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02619DE920F7DF2400099652 /* Assets.xcassets */; };
 		02619DED20F7DF2400099652 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02619DEB20F7DF2400099652 /* MainMenu.xib */; };
@@ -58,6 +64,16 @@
 		FA89042920EF805A008AA0BC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA89042820EF8059008AA0BC /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		024D900A2BC71C04005BF977 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA53906020EF5F7F00BA9AF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA53906720EF5F7F00BA9AF7;
+			remoteInfo = VPNApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		0204472320F001A400B31904 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -89,6 +105,14 @@
 		024D8FE32BC51118005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACCrossPromotionWindow.xib; sourceTree = "<group>"; };
 		024D8FE52BC5114A005BF977 /* ACCrossPromotionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACCrossPromotionWindowController.h; sourceTree = "<group>"; };
 		024D8FE62BC5114A005BF977 /* ACCrossPromotionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCrossPromotionWindowController.m; sourceTree = "<group>"; };
+		024D8FFD2BC5E2DB005BF977 /* VPNStatus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VPNStatus-Bridging-Header.h"; sourceTree = "<group>"; };
+		024D8FFE2BC5E2DC005BF977 /* UpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		024D90002BC71157005BF977 /* GitHubRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRelease.swift; sourceTree = "<group>"; };
+		024D90062BC71C04005BF977 /* VPNAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VPNAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		024D90082BC71C04005BF977 /* GitHubReleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReleaseTests.swift; sourceTree = "<group>"; };
+		024D90142BC72694005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACCheckForUpdateWindow.xib; sourceTree = "<group>"; };
+		024D90162BC726B9005BF977 /* ACCheckForUpdateWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACCheckForUpdateWindow.h; sourceTree = "<group>"; };
+		024D90172BC726B9005BF977 /* ACCheckForUpdateWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCheckForUpdateWindow.m; sourceTree = "<group>"; };
 		02619DE420F7DF2200099652 /* VPNStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02619DE620F7DF2200099652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		02619DE720F7DF2200099652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,6 +150,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		0204472220F001A400B31904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		024D90032BC71C04005BF977 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -197,15 +228,37 @@
 			path = CrossPromotion;
 			sourceTree = "<group>";
 		};
+		024D8FEA2BC5DF31005BF977 /* CheckForUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				024D8FFE2BC5E2DC005BF977 /* UpdateManager.swift */,
+				024D90002BC71157005BF977 /* GitHubRelease.swift */,
+				024D90162BC726B9005BF977 /* ACCheckForUpdateWindow.h */,
+				024D90172BC726B9005BF977 /* ACCheckForUpdateWindow.m */,
+			);
+			path = CheckForUpdate;
+			sourceTree = "<group>";
+		};
+		024D90072BC71C04005BF977 /* VPNAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				024D90082BC71C04005BF977 /* GitHubReleaseTests.swift */,
+			);
+			path = VPNAppTests;
+			sourceTree = "<group>";
+		};
 		02619DE520F7DF2200099652 /* VPNStatus */ = {
 			isa = PBXGroup;
 			children = (
+				024D8FFD2BC5E2DB005BF977 /* VPNStatus-Bridging-Header.h */,
 				02619DE620F7DF2200099652 /* AppDelegate.h */,
 				02619DE720F7DF2200099652 /* AppDelegate.m */,
+				024D8FEA2BC5DF31005BF977 /* CheckForUpdate */,
 				024D8FE72BC5114A005BF977 /* CrossPromotion */,
 				024D8FD52BC1DF32005BF977 /* PreferencesUI */,
 				02619DE920F7DF2400099652 /* Assets.xcassets */,
 				02619DEB20F7DF2400099652 /* MainMenu.xib */,
+				024D90132BC72694005BF977 /* ACCheckForUpdateWindow.xib */,
 				024D8FE22BC51118005BF977 /* ACCrossPromotionWindow.xib */,
 				024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */,
 				024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */,
@@ -242,6 +295,7 @@
 				FA53906A20EF5F7F00BA9AF7 /* VPNApp */,
 				0204472620F001A400B31904 /* vpnutil */,
 				02619DE520F7DF2200099652 /* VPNStatus */,
+				024D90072BC71C04005BF977 /* VPNAppTests */,
 				FA53906920EF5F7F00BA9AF7 /* Products */,
 				FA53907D20EF5FD500BA9AF7 /* Frameworks */,
 			);
@@ -254,6 +308,7 @@
 				0204472520F001A400B31904 /* vpnutil */,
 				02619DE420F7DF2200099652 /* VPNStatus.app */,
 				65DE11952600FE38003E05A8 /* libVPNUtil.dylib */,
+				024D90062BC71C04005BF977 /* VPNAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +375,24 @@
 			productReference = 0204472520F001A400B31904 /* vpnutil */;
 			productType = "com.apple.product-type.tool";
 		};
+		024D90052BC71C04005BF977 /* VPNAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 024D900C2BC71C04005BF977 /* Build configuration list for PBXNativeTarget "VPNAppTests" */;
+			buildPhases = (
+				024D90022BC71C04005BF977 /* Sources */,
+				024D90032BC71C04005BF977 /* Frameworks */,
+				024D90042BC71C04005BF977 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				024D900B2BC71C04005BF977 /* PBXTargetDependency */,
+			);
+			name = VPNAppTests;
+			productName = VPNAppTests;
+			productReference = 024D90062BC71C04005BF977 /* VPNAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		02619DE320F7DF2200099652 /* VPNStatus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02619DF420F7DF2400099652 /* Build configuration list for PBXNativeTarget "VPNStatus" */;
@@ -378,14 +451,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = Timac;
 				TargetAttributes = {
 					0204472420F001A400B31904 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					024D90052BC71C04005BF977 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 02619DE320F7DF2200099652;
+					};
 					02619DE320F7DF2200099652 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1530;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -422,11 +501,19 @@
 				0204472420F001A400B31904 /* vpnutil */,
 				02619DE320F7DF2200099652 /* VPNStatus */,
 				65DE11942600FE38003E05A8 /* VPNUtil */,
+				024D90052BC71C04005BF977 /* VPNAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		024D90042BC71C04005BF977 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02619DE220F7DF2200099652 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +525,7 @@
 				02619DED20F7DF2400099652 /* MainMenu.xib in Resources */,
 				02619DFB20F7E26E00099652 /* icon.icns in Resources */,
 				024D8FDD2BC1E719005BF977 /* ACPreferencesAboutView.xib in Resources */,
+				024D90152BC72694005BF977 /* ACCheckForUpdateWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +553,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		024D90022BC71C04005BF977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				024D90112BC71EA4005BF977 /* GitHubRelease.swift in Sources */,
+				024D90092BC71C04005BF977 /* GitHubReleaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02619DE020F7DF2200099652 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,14 +570,17 @@
 				02619DE820F7DF2200099652 /* AppDelegate.m in Sources */,
 				024D8FE12BC50D28005BF977 /* NSBundle+ACAppInfo.m in Sources */,
 				024D8FD62BC1DF32005BF977 /* ACPreferencesGeneralViewController.m in Sources */,
+				024D8FFF2BC5E2DC005BF977 /* UpdateManager.swift in Sources */,
 				024D8FE82BC5114A005BF977 /* ACCrossPromotionWindowController.m in Sources */,
 				024D8FDA2BC1E6FC005BF977 /* ACPreferencesAboutViewController.m in Sources */,
 				024D8FD72BC1DF32005BF977 /* ACPreferencesWindowController.m in Sources */,
+				024D90122BC72567005BF977 /* GitHubRelease.swift in Sources */,
 				02619DF720F7E23800099652 /* ACNEServicesManager.m in Sources */,
 				02619DF620F7E23600099652 /* ACNEService.m in Sources */,
 				02619DFF20F7F7BF00099652 /* ACPreferences.m in Sources */,
 				028DF1172AC7FA200084A822 /* ACLocationManager.m in Sources */,
 				0231297C20F9F8CF003F7540 /* ACConnectionManager.m in Sources */,
+				024D90182BC726B9005BF977 /* ACCheckForUpdateWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +609,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		024D900B2BC71C04005BF977 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA53906720EF5F7F00BA9AF7 /* VPNApp */;
+			targetProxy = 024D900A2BC71C04005BF977 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */ = {
@@ -541,6 +649,14 @@
 				024D8FE32BC51118005BF977 /* Base */,
 			);
 			name = ACCrossPromotionWindow.xib;
+			sourceTree = "<group>";
+		};
+		024D90132BC72694005BF977 /* ACCheckForUpdateWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				024D90142BC72694005BF977 /* Base */,
+			);
+			name = ACCheckForUpdateWindow.xib;
 			sourceTree = "<group>";
 		};
 		02619DEB20F7DF2400099652 /* MainMenu.xib */ = {
@@ -595,10 +711,62 @@
 			};
 			name = Release;
 		};
+		024D900D2BC71C04005BF977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7Z4QWEKPF;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPNApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VPNApp";
+			};
+			name = Debug;
+		};
+		024D900E2BC71C04005BF977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7Z4QWEKPF;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPNApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VPNApp";
+			};
+			name = Release;
+		};
 		02619DF220F7DF2400099652 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = VPNStatus/VPNStatus.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -618,6 +786,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "VPNStatus/VPNStatus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -625,6 +796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = VPNStatus/VPNStatus.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -643,6 +815,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "VPNStatus/VPNStatus-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -731,7 +905,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -785,7 +959,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -845,6 +1019,15 @@
 			buildConfigurations = (
 				0204472920F001A500B31904 /* Debug */,
 				0204472A20F001A500B31904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		024D900C2BC71C04005BF977 /* Build configuration list for PBXNativeTarget "VPNAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				024D900D2BC71C04005BF977 /* Debug */,
+				024D900E2BC71C04005BF977 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

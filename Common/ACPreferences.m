@@ -19,6 +19,7 @@ NSString * const kServiceIgnoredVPNsKey = @"IgnoredVPNs";
 
 NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay";
 
+NSString * const kSkipVersionPrefKey = @"SkipVersion";
 
 
 @implementation ACPreferences
@@ -142,6 +143,16 @@ NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay
 	{
 		[[NSUserDefaults standardUserDefaults] setInteger:retryDelay forKey:kAlwaysConnectedRetryDelayPrefKey];
 	}
+}
+
+-(NSString *)checkForUpdateSkipVersion
+{
+	return [[NSUserDefaults standardUserDefaults] objectForKey:kSkipVersionPrefKey];
+}
+
+-(void)setCheckForUpdateSkipVersion:(NSString *)version
+{
+	[[NSUserDefaults standardUserDefaults] setObject:version forKey:kSkipVersionPrefKey];
 }
 
 @end

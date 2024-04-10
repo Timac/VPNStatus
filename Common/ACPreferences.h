@@ -48,6 +48,11 @@
 -(NSInteger)alwaysConnectedRetryDelay;
 -(void)setAlwaysConnectedRetryDelay:(NSInteger)retryDelay;
 
+/**
+ Ignore the update
+ */
+-(NSString *)checkForUpdateSkipVersion;
+-(void)setCheckForUpdateSkipVersion:(NSString *)version;
 
 @end
 
