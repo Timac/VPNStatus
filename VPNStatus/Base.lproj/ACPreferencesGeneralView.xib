@@ -41,7 +41,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="retryDelayDidChange:" target="-2" id="C9Q-HU-qgj"/>
+                        <action selector="marginFieldDidChange:" target="-2" id="FXL-fQ-ZAH"/>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="59l-qm-2nr">
@@ -53,9 +53,9 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dkf-TQ-yQo">
-                    <rect key="frame" x="18" y="226" width="386" height="16"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="VPNStatus tries to reconnect to the VPN every 120s by default." id="fsO-os-8rb">
-                        <font key="font" metaFont="system"/>
+                    <rect key="frame" x="18" y="228" width="335" height="14"/>
+                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="VPNStatus tries to reconnect to the VPN every 120s by default." id="fsO-os-8rb">
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

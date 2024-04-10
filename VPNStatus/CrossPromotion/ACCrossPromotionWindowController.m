@@ -7,11 +7,6 @@
 
 #import "ACCrossPromotionWindowController.h"
 
-@interface ACCrossPromotionWindowController ()
-
-@end
-
-
 @implementation ACCrossPromotionWindowController
 
 + (ACCrossPromotionWindowController *)sharedWindowController
@@ -33,11 +28,6 @@
 	}
 	
 	return self;
-}
-
-- (void)windowDidLoad
-{
-	[super windowDidLoad];
 }
 
 -(IBAction)doDependencies:(id)sender
