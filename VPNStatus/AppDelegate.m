@@ -15,6 +15,9 @@
 #import "ACPreferencesWindowController.h"
 #import "ACConnectionManager.h"
 #import "ACLocationManager.h"
+#import "ACCheckForUpdateWindow.h"
+
+#import "VPNStatus-Swift.h"
 
 @interface AppDelegate ()
 
@@ -53,6 +56,15 @@
 		
 		// Refresh the menu
 		[self refreshMenu];
+	}];
+
+	UpdateManager *manager = [UpdateManager shared];
+	NSString *skipVersion = [[ACPreferences sharedPreferences] checkForUpdateSkipVersion];
+	[manager checkForUpdateWithSkippedVersion:skipVersion completion:^(NSString * oldVersion, NSString * newVersion) {
+		if([oldVersion length] > 0 && [newVersion length] > 0)
+		{
+			[[ACCheckForUpdateWindow sharedWindowController] showUpdateAvailable:oldVersion newVersion:newVersion];
+		}
 	}];
 }
 
