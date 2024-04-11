@@ -24,9 +24,13 @@ public struct ACCheckForUpdateView: View {
 					VStack {
 						Text(LocalizedStringKey(releaseNotes))
 							.multilineTextAlignment(.leading)
+							.padding()
 
 						Spacer()
-					}.frame(height: 230)
+					}
+					.frame(height: 230)
+					.background(Color(NSColor.windowBackgroundColor))
+					.border(Color.black, width: 1)
 
 					HStack {
 						Button("Skip This Version") {
