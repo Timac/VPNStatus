@@ -22,9 +22,11 @@ public struct ACCheckForUpdateView: View {
 						.padding(.bottom)
 
 					VStack {
-						Text(LocalizedStringKey(releaseNotes))
-							.multilineTextAlignment(.leading)
-							.padding()
+						ScrollView {
+							Text(LocalizedStringKey(releaseNotes))
+								.frame(maxWidth: .infinity, alignment: .leading)
+						}
+						.padding()
 
 						Spacer()
 					}
