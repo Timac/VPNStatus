@@ -9,7 +9,7 @@
 import Foundation
 
 public struct GitHubRelease: Decodable, Comparable {
-	let name: String
+	let tag_name: String // "1.0", "1.0.1", "1.2", "2.0"
 	let prerelease: Bool
 	let draft: Bool
 	let body: String?
@@ -43,7 +43,7 @@ public struct GitHubRelease: Decodable, Comparable {
 	}
 
 	public func components() -> (major: Int, minor: Int, patch: Int) {
-		var components = self.name.split(separator: ".").compactMap { Int($0) }
+		var components = self.tag_name.split(separator: ".").compactMap { Int($0) }
 		while components.count != 3 {
 			components.append(0)
 		}

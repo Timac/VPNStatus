@@ -15,12 +15,12 @@ import Foundation
 	let currentRelease: GitHubRelease
 
 	override private init() {
-		let appShortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-		if let appShortVersion = appShortVersion {
-			currentRelease = GitHubRelease(name: appShortVersion, prerelease: false, draft: false, body: nil)
-		} else {
-			currentRelease = GitHubRelease(name: "1.0", prerelease: false, draft: false, body: nil)
+		var version = "1.0"
+		if let appShortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+			version = appShortVersion
 		}
+		
+		currentRelease = GitHubRelease(tag_name: version, prerelease: false, draft: false, body: nil)
 	}
 
 	@objc public func checkForUpdate(skippedVersion: String?, completion: @escaping (String?, String?, String?) -> Void) {
@@ -56,7 +56,7 @@ import Foundation
 						debugPrint("A new version is available")
 
 						if let skippedVersion = skippedVersion {
-							let skippedRelease = GitHubRelease(name: skippedVersion, prerelease: false, draft: false, body: nil)
+							let skippedRelease = GitHubRelease(tag_name: skippedVersion, prerelease: false, draft: false, body: nil)
 							if lastRelease <= skippedRelease {
 								debugPrint("Skip the new version")
 								DispatchQueue.main.async {
@@ -68,7 +68,7 @@ import Foundation
 						}
 
 						DispatchQueue.main.async {
-							completion(self.currentRelease.name, lastRelease.name, lastRelease.body)
+							completion(self.currentRelease.tag_name, lastRelease.tag_name, lastRelease.body)
 						}
 						return
 					} else {
