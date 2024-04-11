@@ -22,8 +22,8 @@
 		024D90092BC71C04005BF977 /* GitHubReleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D90082BC71C04005BF977 /* GitHubReleaseTests.swift */; };
 		024D90112BC71EA4005BF977 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D90002BC71157005BF977 /* GitHubRelease.swift */; };
 		024D90122BC72567005BF977 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D90002BC71157005BF977 /* GitHubRelease.swift */; };
-		024D90152BC72694005BF977 /* ACCheckForUpdateWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D90132BC72694005BF977 /* ACCheckForUpdateWindow.xib */; };
-		024D90182BC726B9005BF977 /* ACCheckForUpdateWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D90172BC726B9005BF977 /* ACCheckForUpdateWindow.m */; };
+		024D903C2BC7B230005BF977 /* ACCheckForUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D903B2BC7B230005BF977 /* ACCheckForUpdateView.swift */; };
+		024D903E2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D903D2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift */; };
 		02619DE820F7DF2200099652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DE720F7DF2200099652 /* AppDelegate.m */; };
 		02619DEA20F7DF2400099652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02619DE920F7DF2400099652 /* Assets.xcassets */; };
 		02619DED20F7DF2400099652 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02619DEB20F7DF2400099652 /* MainMenu.xib */; };
@@ -110,9 +110,8 @@
 		024D90002BC71157005BF977 /* GitHubRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRelease.swift; sourceTree = "<group>"; };
 		024D90062BC71C04005BF977 /* VPNAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VPNAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		024D90082BC71C04005BF977 /* GitHubReleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReleaseTests.swift; sourceTree = "<group>"; };
-		024D90142BC72694005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACCheckForUpdateWindow.xib; sourceTree = "<group>"; };
-		024D90162BC726B9005BF977 /* ACCheckForUpdateWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACCheckForUpdateWindow.h; sourceTree = "<group>"; };
-		024D90172BC726B9005BF977 /* ACCheckForUpdateWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACCheckForUpdateWindow.m; sourceTree = "<group>"; };
+		024D903B2BC7B230005BF977 /* ACCheckForUpdateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACCheckForUpdateView.swift; sourceTree = "<group>"; };
+		024D903D2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACCheckForUpdateViewFactory.swift; sourceTree = "<group>"; };
 		02619DE420F7DF2200099652 /* VPNStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02619DE620F7DF2200099652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		02619DE720F7DF2200099652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -233,8 +232,8 @@
 			children = (
 				024D8FFE2BC5E2DC005BF977 /* UpdateManager.swift */,
 				024D90002BC71157005BF977 /* GitHubRelease.swift */,
-				024D90162BC726B9005BF977 /* ACCheckForUpdateWindow.h */,
-				024D90172BC726B9005BF977 /* ACCheckForUpdateWindow.m */,
+				024D903B2BC7B230005BF977 /* ACCheckForUpdateView.swift */,
+				024D903D2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift */,
 			);
 			path = CheckForUpdate;
 			sourceTree = "<group>";
@@ -258,7 +257,6 @@
 				024D8FD52BC1DF32005BF977 /* PreferencesUI */,
 				02619DE920F7DF2400099652 /* Assets.xcassets */,
 				02619DEB20F7DF2400099652 /* MainMenu.xib */,
-				024D90132BC72694005BF977 /* ACCheckForUpdateWindow.xib */,
 				024D8FE22BC51118005BF977 /* ACCrossPromotionWindow.xib */,
 				024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */,
 				024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */,
@@ -525,7 +523,6 @@
 				02619DED20F7DF2400099652 /* MainMenu.xib in Resources */,
 				02619DFB20F7E26E00099652 /* icon.icns in Resources */,
 				024D8FDD2BC1E719005BF977 /* ACPreferencesAboutView.xib in Resources */,
-				024D90152BC72694005BF977 /* ACCheckForUpdateWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,11 +573,12 @@
 				024D8FD72BC1DF32005BF977 /* ACPreferencesWindowController.m in Sources */,
 				024D90122BC72567005BF977 /* GitHubRelease.swift in Sources */,
 				02619DF720F7E23800099652 /* ACNEServicesManager.m in Sources */,
+				024D903E2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift in Sources */,
 				02619DF620F7E23600099652 /* ACNEService.m in Sources */,
+				024D903C2BC7B230005BF977 /* ACCheckForUpdateView.swift in Sources */,
 				02619DFF20F7F7BF00099652 /* ACPreferences.m in Sources */,
 				028DF1172AC7FA200084A822 /* ACLocationManager.m in Sources */,
 				0231297C20F9F8CF003F7540 /* ACConnectionManager.m in Sources */,
-				024D90182BC726B9005BF977 /* ACCheckForUpdateWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,14 +649,6 @@
 			name = ACCrossPromotionWindow.xib;
 			sourceTree = "<group>";
 		};
-		024D90132BC72694005BF977 /* ACCheckForUpdateWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				024D90142BC72694005BF977 /* Base */,
-			);
-			name = ACCheckForUpdateWindow.xib;
-			sourceTree = "<group>";
-		};
 		02619DEB20F7DF2400099652 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -687,7 +677,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = QFL3YR6JR6;
 				INFOPLIST_FILE = vpnutil/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.vpnutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -704,7 +694,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = QFL3YR6JR6;
 				INFOPLIST_FILE = vpnutil/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.vpnutil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -724,7 +714,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNAppTests;
@@ -750,7 +740,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNAppTests;
@@ -780,7 +770,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNStatus;
@@ -810,7 +800,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.timac.VPNStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -829,7 +819,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -845,7 +835,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -905,7 +895,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -959,7 +949,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
