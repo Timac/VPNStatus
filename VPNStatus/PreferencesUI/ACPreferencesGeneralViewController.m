@@ -12,6 +12,7 @@
 @interface ACPreferencesGeneralViewController ()
 
 @property (weak) IBOutlet NSTextField *retryDelayField;
+@property (weak) IBOutlet NSButton *automaticCheckForUpdatesButton;
 
 @end
 
@@ -34,6 +35,16 @@
 
 	NSInteger retryDelay = [[ACPreferences sharedPreferences] alwaysConnectedRetryDelay];
 	[self.retryDelayField setIntegerValue:retryDelay];
+
+	BOOL disabledCheckForUpdatesAutomatically = [[ACPreferences sharedPreferences] disabledCheckForUpdatesAutomatically];
+	if(disabledCheckForUpdatesAutomatically)
+	{
+		[self.automaticCheckForUpdatesButton setState:NSControlStateValueOff];
+	}
+	else
+	{
+		[self.automaticCheckForUpdatesButton setState:NSControlStateValueOn];
+	}
 }
 
 - (void)viewWillDisappear
