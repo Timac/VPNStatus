@@ -46,7 +46,7 @@ public struct ACCheckForUpdateView: View {
 							NSApplication.shared.keyWindow?.close()
 						}
 
-						Button("Install Update") {
+						Button("Download Update…") {
 							if let url = URL(string: "https://github.com/Timac/VPNStatus/releases") {
 								NSWorkspace.shared.open(url)
 							}
