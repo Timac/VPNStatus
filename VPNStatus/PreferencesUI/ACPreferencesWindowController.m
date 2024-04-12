@@ -8,6 +8,7 @@
 
 #import "ACPreferencesGeneralViewController.h"
 #import "ACPreferencesAboutViewController.h"
+#import "ACPreferencesIgnoredViewController.h"
 
 @interface ACPreferencesWindowController () <NSToolbarDelegate>
 
@@ -15,6 +16,7 @@
 
 @property (strong) ACPreferencesGeneralViewController *generalViewController;
 @property (strong) ACPreferencesAboutViewController *aboutViewController;
+@property (strong) ACPreferencesIgnoredViewController *ignoredViewController;
 
 @end
 
@@ -39,6 +41,7 @@
 	{
 		_generalViewController = [[ACPreferencesGeneralViewController alloc] initViewController];
 		_aboutViewController = [[ACPreferencesAboutViewController alloc] initViewController];
+		_ignoredViewController = [[ACPreferencesIgnoredViewController alloc] initViewController];
 	}
 	
 	[self.window setReleasedWhenClosed:NO];
@@ -57,6 +60,7 @@
 - (NSArray<NSToolbarItemIdentifier> *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar
 {
 	return @[	[self.generalViewController identifier],
+				[self.ignoredViewController identifier],
 				[self.aboutViewController identifier],
 				@"NSToolbarFlexibleSpaceItem"
 			];
@@ -135,6 +139,11 @@
 -(IBAction)doGeneral:(id)sender
 {
 	[self changeToViewController:self.generalViewController animated:YES];
+}
+
+-(IBAction)doIgnored:(id)sender
+{
+	[self changeToViewController:self.ignoredViewController animated:YES];
 }
 
 -(IBAction)doAbout:(id)sender

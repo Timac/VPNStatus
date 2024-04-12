@@ -24,6 +24,8 @@
 		024D90122BC72567005BF977 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D90002BC71157005BF977 /* GitHubRelease.swift */; };
 		024D903C2BC7B230005BF977 /* ACCheckForUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D903B2BC7B230005BF977 /* ACCheckForUpdateView.swift */; };
 		024D903E2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024D903D2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift */; };
+		024D90552BC9AE8F005BF977 /* ACPreferencesIgnoredView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024D90532BC9AE8F005BF977 /* ACPreferencesIgnoredView.xib */; };
+		024D90582BC9AEB2005BF977 /* ACPreferencesIgnoredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024D90572BC9AEB2005BF977 /* ACPreferencesIgnoredViewController.m */; };
 		02619DE820F7DF2200099652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02619DE720F7DF2200099652 /* AppDelegate.m */; };
 		02619DEA20F7DF2400099652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02619DE920F7DF2400099652 /* Assets.xcassets */; };
 		02619DED20F7DF2400099652 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02619DEB20F7DF2400099652 /* MainMenu.xib */; };
@@ -112,6 +114,9 @@
 		024D90082BC71C04005BF977 /* GitHubReleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReleaseTests.swift; sourceTree = "<group>"; };
 		024D903B2BC7B230005BF977 /* ACCheckForUpdateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACCheckForUpdateView.swift; sourceTree = "<group>"; };
 		024D903D2BC7B904005BF977 /* ACCheckForUpdateViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACCheckForUpdateViewFactory.swift; sourceTree = "<group>"; };
+		024D90542BC9AE8F005BF977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ACPreferencesIgnoredView.xib; sourceTree = "<group>"; };
+		024D90562BC9AEB2005BF977 /* ACPreferencesIgnoredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPreferencesIgnoredViewController.h; sourceTree = "<group>"; };
+		024D90572BC9AEB2005BF977 /* ACPreferencesIgnoredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPreferencesIgnoredViewController.m; sourceTree = "<group>"; };
 		02619DE420F7DF2200099652 /* VPNStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02619DE620F7DF2200099652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		02619DE720F7DF2200099652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -207,13 +212,15 @@
 			children = (
 				024D8FE02BC50D28005BF977 /* NSBundle+ACAppInfo.h */,
 				024D8FDF2BC50D28005BF977 /* NSBundle+ACAppInfo.m */,
+				024D8FD42BC1DF32005BF977 /* ACPreferencesWindowControllerProtocol.h */,
+				024D8FD22BC1DF32005BF977 /* ACPreferencesWindowController.h */,
+				024D8FD32BC1DF32005BF977 /* ACPreferencesWindowController.m */,
 				024D8FD02BC1DF32005BF977 /* ACPreferencesGeneralViewController.h */,
 				024D8FD12BC1DF32005BF977 /* ACPreferencesGeneralViewController.m */,
 				024D8FD82BC1E6FB005BF977 /* ACPreferencesAboutViewController.h */,
 				024D8FD92BC1E6FC005BF977 /* ACPreferencesAboutViewController.m */,
-				024D8FD22BC1DF32005BF977 /* ACPreferencesWindowController.h */,
-				024D8FD32BC1DF32005BF977 /* ACPreferencesWindowController.m */,
-				024D8FD42BC1DF32005BF977 /* ACPreferencesWindowControllerProtocol.h */,
+				024D90562BC9AEB2005BF977 /* ACPreferencesIgnoredViewController.h */,
+				024D90572BC9AEB2005BF977 /* ACPreferencesIgnoredViewController.m */,
 			);
 			path = PreferencesUI;
 			sourceTree = "<group>";
@@ -260,6 +267,7 @@
 				024D8FE22BC51118005BF977 /* ACCrossPromotionWindow.xib */,
 				024D8FCA2BC1DE38005BF977 /* ACPreferencesGeneralView.xib */,
 				024D8FDB2BC1E719005BF977 /* ACPreferencesAboutView.xib */,
+				024D90532BC9AE8F005BF977 /* ACPreferencesIgnoredView.xib */,
 				024D8FCC2BC1DE38005BF977 /* ACPreferencesWindow.xib */,
 				02619DEE20F7DF2400099652 /* Info.plist */,
 				02619DEF20F7DF2400099652 /* main.m */,
@@ -516,6 +524,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024D90552BC9AE8F005BF977 /* ACPreferencesIgnoredView.xib in Resources */,
 				024D8FE42BC51118005BF977 /* ACCrossPromotionWindow.xib in Resources */,
 				024D8FCE2BC1DE38005BF977 /* ACPreferencesGeneralView.xib in Resources */,
 				024D8FCF2BC1DE38005BF977 /* ACPreferencesWindow.xib in Resources */,
@@ -579,6 +588,7 @@
 				02619DFF20F7F7BF00099652 /* ACPreferences.m in Sources */,
 				028DF1172AC7FA200084A822 /* ACLocationManager.m in Sources */,
 				0231297C20F9F8CF003F7540 /* ACConnectionManager.m in Sources */,
+				024D90582BC9AEB2005BF977 /* ACPreferencesIgnoredViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +657,14 @@
 				024D8FE32BC51118005BF977 /* Base */,
 			);
 			name = ACCrossPromotionWindow.xib;
+			sourceTree = "<group>";
+		};
+		024D90532BC9AE8F005BF977 /* ACPreferencesIgnoredView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				024D90542BC9AE8F005BF977 /* Base */,
+			);
+			name = ACPreferencesIgnoredView.xib;
 			sourceTree = "<group>";
 		};
 		02619DEB20F7DF2400099652 /* MainMenu.xib */ = {

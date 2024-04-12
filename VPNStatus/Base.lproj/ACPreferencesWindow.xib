@@ -33,6 +33,11 @@
                             <action selector="doGeneral:" target="-2" id="xSc-Lz-pDc"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="23AAD77B-61A6-46F1-9B48-962A17DE31F4" explicitItemIdentifier="ignored" label="Ignored" paletteLabel="Ignored" tag="-1" image="nosign" catalog="system" sizingBehavior="auto" selectable="YES" id="aLL-EU-D2h" userLabel="Ignored">
+                        <connections>
+                            <action selector="doIgnored:" target="-2" id="rWm-Aw-Rt0"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="6C045426-5C34-46F1-ACB5-428E72484FC3" explicitItemIdentifier="about" label="About" paletteLabel="About" tag="-1" image="info.circle" catalog="system" sizingBehavior="auto" selectable="YES" id="fCd-GX-kuG" userLabel="About">
                         <connections>
                             <action selector="doAbout:" target="-2" id="KwZ-mT-LPZ"/>
@@ -57,5 +62,6 @@
     <resources>
         <image name="gearshape" catalog="system" width="16" height="16"/>
         <image name="info.circle" catalog="system" width="15" height="15"/>
+        <image name="nosign" catalog="system" width="15" height="15"/>
     </resources>
 </document>

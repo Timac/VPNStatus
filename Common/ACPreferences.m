@@ -103,7 +103,27 @@ NSString * const kDisabledCheckForUpdatesAutomaticallyPrefKey = @"DisabledCheckF
 -(NSArray<NSString *> *)ignoredSSIDs
 {
     NSString *ignoredSSIDsString = [[NSUserDefaults standardUserDefaults] stringForKey:kServiceIgnoredSSIDsKey];
-    return [ignoredSSIDsString componentsSeparatedByString:@","];
+	if([ignoredSSIDsString length] > 0)
+	{
+		return [ignoredSSIDsString componentsSeparatedByString:@","];
+	}
+	else
+	{
+		return @[];
+	}
+}
+
+-(void)setIgnoredSSIDs:(NSArray<NSString *> *)ignoredSSIDs
+{
+	if([ignoredSSIDs count] <= 0)
+	{
+		[[NSUserDefaults standardUserDefaults] removeObjectForKey:kServiceIgnoredSSIDsKey];
+	}
+	else
+	{
+		NSString *value = [ignoredSSIDs componentsJoinedByString:@","];
+		[[NSUserDefaults standardUserDefaults] setValue:value forKey:kServiceIgnoredSSIDsKey];
+	}
 }
 
 /**
@@ -121,8 +141,21 @@ NSString * const kDisabledCheckForUpdatesAutomaticallyPrefKey = @"DisabledCheckF
 		// Don't display the Little Snitch Content Filter Configuration
 		ignoredVPNsString = @"Little Snitch";
 	}
-	
+
 	return [ignoredVPNsString componentsSeparatedByString:@","];
+}
+
+-(void)setIgnoredVPNs:(NSArray<NSString *> *)ignoredVPNs
+{
+	if([ignoredVPNs count] <= 0)
+	{
+		[[NSUserDefaults standardUserDefaults] removeObjectForKey:kServiceIgnoredVPNsKey];
+	}
+	else
+	{
+		NSString *value = [ignoredVPNs componentsJoinedByString:@","];
+		[[NSUserDefaults standardUserDefaults] setValue:value forKey:kServiceIgnoredVPNsKey];
+	}
 }
 
 -(NSInteger)alwaysConnectedRetryDelay

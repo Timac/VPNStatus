@@ -27,12 +27,14 @@
  Return the list of ignored SSIDs for the current service identifier
  */
 -(NSArray<NSString *>*)ignoredSSIDs;
+-(void)setIgnoredSSIDs:(NSArray<NSString *> *)ignoredSSIDs;
 
 
 /**
  Return the list of VPN to ignore
  */
 -(NSArray<NSString *>*)ignoredVPNs;
+-(void)setIgnoredVPNs:(NSArray<NSString *> *)ignoredVPNs;
 
 
 /**
