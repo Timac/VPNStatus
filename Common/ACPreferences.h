@@ -9,6 +9,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString * const kACConfigurationDidChange;
 
 @interface ACPreferences : NSObject
 

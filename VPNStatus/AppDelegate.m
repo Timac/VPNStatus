@@ -26,6 +26,24 @@
 
 @implementation AppDelegate
 
+- (void)reloadConfigurations
+{
+	// Make sure that the ACNEServicesManager singleton is created and load the configurations
+	[[ACNEServicesManager sharedNEServicesManager] loadConfigurationsWithHandler:^(NSError * error)
+	 {
+		if(error != nil)
+		{
+			NSLog(@"Failed to load the configurations - %@", error);
+		}
+
+		// Connect all services that are marked as always auto connect
+		[[ACConnectionManager sharedManager] connectAllAutoConnectedServices];
+
+		// Refresh the menu
+		[self refreshMenu];
+	}];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// Create the ACConnectionManager singleton
@@ -41,21 +59,10 @@
 	// Register for notifications to refresh the UI
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMenu) name:kSessionStateChangedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMenu) name:kACLocationManagerAuthorizationDidChange object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadConfigurations) name:kACConfigurationDidChange object:nil];
 
 	// Make sure that the ACNEServicesManager singleton is created and load the configurations
-	[[ACNEServicesManager sharedNEServicesManager] loadConfigurationsWithHandler:^(NSError * error)
-	{
-		if(error != nil)
-		{
-			NSLog(@"Failed to load the configurations - %@", error);
-		}
-		
-		// Connect all services that are marked as always auto connect
-		[[ACConnectionManager sharedManager] connectAllAutoConnectedServices];
-		
-		// Refresh the menu
-		[self refreshMenu];
-	}];
+	[self reloadConfigurations];
 
 	if(![[ACPreferences sharedPreferences] disabledCheckForUpdatesAutomatically])
 	{

@@ -21,6 +21,8 @@ NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay
 
 NSString * const kDisabledCheckForUpdatesAutomaticallyPrefKey = @"DisabledCheckForUpdatesAutomatically";
 
+NSString * const kACConfigurationDidChange = @"kACConfigurationDidChange";
+
 
 @implementation ACPreferences
 
@@ -124,6 +126,11 @@ NSString * const kDisabledCheckForUpdatesAutomaticallyPrefKey = @"DisabledCheckF
 		NSString *value = [ignoredSSIDs componentsJoinedByString:@","];
 		[[NSUserDefaults standardUserDefaults] setValue:value forKey:kServiceIgnoredSSIDsKey];
 	}
+
+	// Post a notification to reload the VPN configurations and refresh the UI
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[[NSNotificationCenter defaultCenter] postNotificationName:kACConfigurationDidChange object:nil];
+	});
 }
 
 /**
@@ -156,6 +163,11 @@ NSString * const kDisabledCheckForUpdatesAutomaticallyPrefKey = @"DisabledCheckF
 		NSString *value = [ignoredVPNs componentsJoinedByString:@","];
 		[[NSUserDefaults standardUserDefaults] setValue:value forKey:kServiceIgnoredVPNsKey];
 	}
+
+	// Post a notification to reload the VPN configurations and refresh the UI
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[[NSNotificationCenter defaultCenter] postNotificationName:kACConfigurationDidChange object:nil];
+	});
 }
 
 -(NSInteger)alwaysConnectedRetryDelay
