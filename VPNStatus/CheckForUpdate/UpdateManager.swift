@@ -23,7 +23,18 @@ import Foundation
 		currentRelease = GitHubRelease(tag_name: version, prerelease: false, draft: false, body: nil)
 	}
 
-	@objc public func checkForUpdate(skippedVersion: String?, completion: @escaping (String?, String?, String?) -> Void) {
+	@objc public func checkForUpdate() {
+		let skipVersion = checkForUpdateSkipVersion()
+		checkForUpdate(skippedVersion: skipVersion) { currentVersion, newVersion, releaseNotes in
+			if let currentVersion = currentVersion, !currentVersion.isEmpty,
+			   let newVersion = newVersion, !newVersion.isEmpty {
+				let checkForUpdateWindowController = ACCheckForUpdateViewFactory.makeWindow(currentVersion: currentVersion, newVersion: newVersion, releaseNotes: releaseNotes ?? "")
+				checkForUpdateWindowController.showWindow(self)
+			}
+		}
+	}
+
+	private func checkForUpdate(skippedVersion: String?, completion: @escaping (String?, String?, String?) -> Void) {
 		guard let gitHubURL = gitHubURL else {
 			DispatchQueue.main.async {
 				completion(nil, nil, nil)
@@ -87,5 +98,17 @@ import Foundation
 				}
 			}
 		}.resume()
+	}
+
+	// MARK: - Preferences
+
+	static let skipVersionPrefKey: String = "SkipVersion"
+
+	public func setCheckForUpdateSkipVersion(version: String?) {
+		UserDefaults.standard.setValue(version, forKey: UpdateManager.skipVersionPrefKey)
+	}
+
+	public func checkForUpdateSkipVersion() -> String? {
+		return UserDefaults.standard.string(forKey: UpdateManager.skipVersionPrefKey)
 	}
 }

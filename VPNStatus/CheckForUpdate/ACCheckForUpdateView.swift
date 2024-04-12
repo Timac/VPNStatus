@@ -36,7 +36,7 @@ public struct ACCheckForUpdateView: View {
 
 					HStack {
 						Button("Skip This Version") {
-							UserDefaults.standard.setValue(newVersion, forKey: "SkipVersion")
+							UpdateManager.shared.setCheckForUpdateSkipVersion(version: newVersion)
 							NSApplication.shared.keyWindow?.close()
 						}
 

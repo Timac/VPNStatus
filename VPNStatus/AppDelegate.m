@@ -57,15 +57,7 @@
 		[self refreshMenu];
 	}];
 
-	UpdateManager *manager = [UpdateManager shared];
-	NSString *skipVersion = [[ACPreferences sharedPreferences] checkForUpdateSkipVersion];
-	[manager checkForUpdateWithSkippedVersion:skipVersion completion:^(NSString * currentVersion, NSString * newVersion, NSString * releaseNotes) {
-		if([currentVersion length] > 0 && [newVersion length] > 0)
-		{
-			NSWindowController *checkForUpdateWindowController = [ACCheckForUpdateViewFactory makeWindowWithCurrentVersion:currentVersion newVersion:newVersion releaseNotes:releaseNotes];
-			[checkForUpdateWindowController showWindow:self];
-		}
-	}];
+	[[UpdateManager shared] checkForUpdate];
 }
 
 - (void)updateStatusItemIcon

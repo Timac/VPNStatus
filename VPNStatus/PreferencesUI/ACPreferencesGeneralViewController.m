@@ -7,6 +7,7 @@
 #import "ACPreferencesGeneralViewController.h"
 
 #import "ACPreferences.h"
+#import "VPNStatus-Swift.h"
 
 @interface ACPreferencesGeneralViewController ()
 
@@ -46,18 +47,23 @@
 
 -(NSString*)identifier
 {
-    return [[self title] lowercaseString];
+	return [[self title] lowercaseString];
 }
 
 -(NSString*)title
 {
-    return @"General";
+	return @"General";
 }
 
 - (IBAction)retryDelayDidChange:(id)sender
 {
 	NSInteger retryDelay = [sender integerValue];
 	[[ACPreferences sharedPreferences] setAlwaysConnectedRetryDelay:retryDelay];
+}
+
+- (IBAction)doCheckForUpdates:(id)sender
+{
+	[[UpdateManager shared] checkForUpdate];
 }
 
 @end
