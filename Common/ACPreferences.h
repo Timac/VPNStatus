@@ -10,6 +10,7 @@
 #import <Cocoa/Cocoa.h>
 
 extern NSString * const kACConfigurationDidChange;
+extern NSString * const kACMenuBarImageDidChange;
 
 @interface ACPreferences : NSObject
 
@@ -51,8 +52,33 @@ extern NSString * const kACConfigurationDidChange;
 -(NSInteger)alwaysConnectedRetryDelay;
 -(void)setAlwaysConnectedRetryDelay:(NSInteger)retryDelay;
 
+
+/**
+ Disable the check for updates
+ */
 -(BOOL)disabledCheckForUpdatesAutomatically;
 -(void)setDisabledCheckForUpdatesAutomatically:(BOOL)inValue;
+
+
+/**
+ Menu Bar Images
+ */
+
+typedef NS_ENUM(NSInteger, MenuBarImageType) {
+	MenuBarImageType_Colors,
+	MenuBarImageType_Cloud
+};
+
+typedef NS_ENUM(NSInteger, MenuBarImageState) {
+	MenuBarImageState_Off,
+	MenuBarImageState_On,
+	MenuBarImageState_Pause
+};
+
+-(MenuBarImageType)menuBarImageType;
+-(void)setMenuBarImageType:(MenuBarImageType)menuBarImageType;
++(NSImage *)menuBarImageForState:(MenuBarImageState)inState;
++(NSImage *)menuBarImageForState:(MenuBarImageState)inState andType:(MenuBarImageType)inType;
 
 @end
 

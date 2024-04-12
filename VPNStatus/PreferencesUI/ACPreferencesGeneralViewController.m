@@ -13,6 +13,7 @@
 
 @property (weak) IBOutlet NSTextField *retryDelayField;
 @property (weak) IBOutlet NSButton *automaticCheckForUpdatesButton;
+@property (weak) IBOutlet NSPopUpButton *menuBarImagePopUpButton;
 
 @end
 
@@ -45,6 +46,16 @@
 	{
 		[self.automaticCheckForUpdatesButton setState:NSControlStateValueOn];
 	}
+
+	NSMenu *theMenu = self.menuBarImagePopUpButton.menu;
+	for(NSInteger menuItemIndex = 0 ; menuItemIndex < theMenu.numberOfItems ; menuItemIndex++)
+	{
+		NSMenuItem *menuItem = [theMenu itemAtIndex:menuItemIndex];
+		[menuItem setImage:[ACPreferences menuBarImageForState:MenuBarImageState_On andType:menuItemIndex]];
+	}
+
+	NSInteger selectedMenuBarItem = [[ACPreferences sharedPreferences] menuBarImageType];
+	[self.menuBarImagePopUpButton selectItemAtIndex:selectedMenuBarItem];
 }
 
 - (void)viewWillDisappear
@@ -81,6 +92,12 @@
 {
 	NSButton *checkbox = (NSButton *)sender;
 	[[ACPreferences sharedPreferences] setDisabledCheckForUpdatesAutomatically:(checkbox.state != NSControlStateValueOn)];
+}
+
+- (IBAction)doChangeMenuBarImage:(id)sender
+{
+	NSInteger menuBarImageType = [sender indexOfSelectedItem];
+	[[ACPreferences sharedPreferences] setMenuBarImageType:menuBarImageType];
 }
 
 @end

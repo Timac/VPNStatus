@@ -48,18 +48,19 @@
 {
 	// Create the ACConnectionManager singleton
 	[ACConnectionManager sharedManager];
-	
+
 	// Create the NSStatusItem
 	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
 	[self updateStatusItemIcon];
-	
+
 	// Refresh the menu
 	[self refreshMenu];
-	
+
 	// Register for notifications to refresh the UI
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMenu) name:kSessionStateChangedNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMenu) name:kACLocationManagerAuthorizationDidChange object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadConfigurations) name:kACConfigurationDidChange object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMenu) name:kACMenuBarImageDidChange object:nil];
 
 	// Make sure that the ACNEServicesManager singleton is created and load the configurations
 	[self reloadConfigurations];
@@ -75,8 +76,8 @@
 	NSButton *statusItemButton = [self.statusItem button];
 	if(statusItemButton != nil)
 	{
-		NSImage *image = [NSImage imageNamed:@"VPNStatusItemOffImage"];
-		
+		NSImage *image = [ACPreferences menuBarImageForState:MenuBarImageState_Off];
+
 		BOOL oneServiceConnected = NO;
 		NSArray <ACNEService*>* neServices = [[ACNEServicesManager sharedNEServicesManager] neServices];
 		for(ACNEService *service in neServices)
@@ -89,15 +90,15 @@
 		
 		if(oneServiceConnected)
 		{
-			image = [NSImage imageNamed:@"VPNStatusItemOnImage"];
+			image = [ACPreferences menuBarImageForState:MenuBarImageState_On];
 		}
 		else if(([[ACConnectionManager sharedManager] currentPauseDuration] == NSIntegerMax))
 		{
-			image = [NSImage imageNamed:@"VPNStatusItemOffImage"];;
+			image = [ACPreferences menuBarImageForState:MenuBarImageState_Off];
 		}
 		else if([[ACConnectionManager sharedManager] isAtLeastOneServiceSetToAutoConnect])
 		{
-			image = [NSImage imageNamed:@"VPNStatusItemPauseImage"];
+			image = [ACPreferences menuBarImageForState:MenuBarImageState_Pause];
 		}
 		
 		[statusItemButton setImage:image];
