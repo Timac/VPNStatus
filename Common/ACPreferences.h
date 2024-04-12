@@ -48,5 +48,8 @@
 -(NSInteger)alwaysConnectedRetryDelay;
 -(void)setAlwaysConnectedRetryDelay:(NSInteger)retryDelay;
 
+-(BOOL)disabledCheckForUpdatesAutomatically;
+-(void)setDisabledCheckForUpdatesAutomatically:(BOOL)inValue;
+
 @end
 

@@ -63,7 +63,13 @@
 
 - (IBAction)doCheckForUpdates:(id)sender
 {
-	[[UpdateManager shared] checkForUpdate];
+	[[UpdateManager shared] checkForUpdateWithShowUpToDateAlert:YES];
+}
+
+- (IBAction)doCheckForUpdatesAutomatically:(id)sender
+{
+	NSButton *checkbox = (NSButton *)sender;
+	[[ACPreferences sharedPreferences] setDisabledCheckForUpdatesAutomatically:(checkbox.state != NSControlStateValueOn)];
 }
 
 @end

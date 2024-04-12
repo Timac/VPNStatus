@@ -57,7 +57,10 @@
 		[self refreshMenu];
 	}];
 
-	[[UpdateManager shared] checkForUpdate];
+	if(![[ACPreferences sharedPreferences] disabledCheckForUpdatesAutomatically])
+	{
+		[[UpdateManager shared] checkForUpdateWithShowUpToDateAlert:NO];
+	}
 }
 
 - (void)updateStatusItemIcon

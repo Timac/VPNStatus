@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 @objc public final class UpdateManager: NSObject {
 	@objc public static let shared = UpdateManager()
@@ -23,13 +24,21 @@ import Foundation
 		currentRelease = GitHubRelease(tag_name: version, prerelease: false, draft: false, body: nil)
 	}
 
-	@objc public func checkForUpdate() {
+	@objc public func checkForUpdate(showUpToDateAlert: Bool) {
 		let skipVersion = checkForUpdateSkipVersion()
 		checkForUpdate(skippedVersion: skipVersion) { currentVersion, newVersion, releaseNotes in
 			if let currentVersion = currentVersion, !currentVersion.isEmpty,
 			   let newVersion = newVersion, !newVersion.isEmpty {
 				let checkForUpdateWindowController = ACCheckForUpdateViewFactory.makeWindow(currentVersion: currentVersion, newVersion: newVersion, releaseNotes: releaseNotes ?? "")
 				checkForUpdateWindowController.showWindow(self)
+			} else {
+				if showUpToDateAlert {
+					let alert = NSAlert()
+					alert.messageText = "You’re up to date!"
+					alert.informativeText = "You are already using the latest version of VPNStatus."
+					alert.addButton(withTitle: "OK")
+					alert.runModal()
+				}
 			}
 		}
 	}

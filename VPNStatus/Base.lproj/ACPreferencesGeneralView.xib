@@ -41,7 +41,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <action selector="marginFieldDidChange:" target="-2" id="FXL-fQ-ZAH"/>
+                        <action selector="retryDelayDidChange:" target="-2" id="BKx-p4-cUL"/>
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="59l-qm-2nr">
@@ -67,6 +67,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="doCheckForUpdatesAutomatically:" target="-2" id="mH9-di-Cle"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7D-qa-qEI">
                     <rect key="frame" x="37" y="180" width="59" height="16"/>
