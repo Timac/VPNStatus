@@ -56,31 +56,23 @@ brew install --cask timac/vpnstatus/vpnstatus
 ```
 
 
+# Settings window
+
+VPNStatus lets you tweak the settings in the preferences window:
+
+![](Screenshots/SettingsGeneral.png)
+
+
 # Retry Delay
 
-VPNStatus tries to reconnect to the VPN every 120s by default. You can change this value using a secret preference. To change the retry delay to 30s:
+VPNStatus tries to reconnect to the VPN every 120s by default. You can change this value in the settings.
 
-- Quit VPNStatus
-- Run this command in a Terminal window:
-
-```
-defaults write org.timac.VPNStatus AlwaysConnectedRetryDelay -int 30
-```
-
-Note that the minimum valid value for `AlwaysConnectedRetryDelay` is 11. If you use a lower value, the default value (120s) will be used.
 
 # Ignored SSIDs
 
 VPNStatus can optionally ignore one or more SSIDs, such that services are **not** autoconnected when the current Wi-Fi SSID is on the ignored list.
 
-To set the list of ignored SSIDs:
-
-- Quit VPNStatus
-- Run this command in a Terminal window:
-
-```
-defaults write org.timac.VPNStatus IgnoredSSIDs "OneSSID,SecondSSID,Third SSID"
-```
+![](Screenshots/SettingsSSIDs.png)
 
 With the above example, if the current Wi-Fi network SSID is `OneSSID`, `SecondSSID`, or `Third SSID`, then the VPN will **not** autoconnect.
 
@@ -91,12 +83,11 @@ Note that SSIDs **are** case-sensitive.
 Starting in macOS 14 Sonoma, reading the Wi-Fi SSID requires Location Services access. Without the Location Services access enabled, VPNStatus can't ignore SSIDs while autoconnecting. VPNStatus now checks the Location Services authorization and displays a menu item to grant the permissions.
 
 
+
 # Hide VPNs
 
 There are some VPN configurations that you might not want to see in VPNStatus. This is the case of third-party content filter configurations like Little Snitch. 
 
-By default, VPNStatus will hide the Little Snitch content filter configuration. You can override the preference to hide more VPN configurations. Example:
+By default, VPNStatus will hide the Little Snitch content filter configuration. You can override the preference to hide more VPN configurations:
 
-```
-defaults write org.timac.VPNStatus IgnoredVPNs "Little Snitch,HiddenVPN,AnotherHiddenVPN"
-```
+![](Screenshots/SettingsVPNs.png)
