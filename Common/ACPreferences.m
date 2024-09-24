@@ -20,6 +20,7 @@ NSString * const kServiceIgnoredVPNsKey = @"IgnoredVPNs";
 NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay";
 
 NSString * const kDisabledCheckForUpdatesAutomaticallyPrefKey = @"DisabledCheckForUpdatesAutomatically";
+NSString * const kSingleAutoConnectPrefKey = @"SingleAutoConnect";
 NSString * const kMenuBarImageTypePrefKey = @"MenuBarImageType";
 
 NSString * const kACConfigurationDidChange = @"kACConfigurationDidChange";
@@ -200,6 +201,16 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 -(void)setDisabledCheckForUpdatesAutomatically:(BOOL)inValue
 {
 	[[NSUserDefaults standardUserDefaults] setBool:inValue forKey:kDisabledCheckForUpdatesAutomaticallyPrefKey];
+}
+
+-(BOOL)singleAutoConnect
+{
+  return [[NSUserDefaults standardUserDefaults] boolForKey:kSingleAutoConnectPrefKey];
+}
+
+-(void)setSingleAutoConnect:(BOOL)inValue
+{
+  [[NSUserDefaults standardUserDefaults] setBool:inValue forKey:kSingleAutoConnectPrefKey];
 }
 
 -(MenuBarImageType)menuBarImageType

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,6 +11,7 @@
                 <outlet property="automaticCheckForUpdatesButton" destination="dKe-mY-Q8g" id="deo-tr-Dk5"/>
                 <outlet property="menuBarImagePopUpButton" destination="JEm-iV-Zdi" id="10I-hd-DLI"/>
                 <outlet property="retryDelayField" destination="q5O-D3-mgT" id="P6H-Qj-cWL"/>
+                <outlet property="singleAutoConnectButton" destination="YCL-cX-bWo" id="v3T-Gb-KY0"/>
                 <outlet property="view" destination="6sE-tW-1JD" id="Fk7-dv-Doh"/>
             </connections>
         </customObject>
@@ -20,15 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="317"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K3Q-df-0o3">
-                    <rect key="frame" x="106" y="175" width="78" height="16"/>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3Q-df-0o3">
+                    <rect key="frame" x="106" y="200" width="78" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Retry Delay:" id="c4R-ke-SFN">
                         <font key="font" usesAppearanceFont="YES"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6QB-Sz-gYR">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6QB-Sz-gYR">
                     <rect key="frame" x="78" y="261" width="106" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Menu Bar Image:" id="hfn-1y-57L">
                         <font key="font" usesAppearanceFont="YES"/>
@@ -36,8 +37,8 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5O-D3-mgT">
-                    <rect key="frame" x="190" y="173" width="60" height="21"/>
+                <textField focusRingType="none" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5O-D3-mgT">
+                    <rect key="frame" x="190" y="198" width="60" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="YvO-Ic-mF5"/>
                     </constraints>
@@ -54,16 +55,16 @@
                         <action selector="retryDelayDidChange:" target="-2" id="BKx-p4-cUL"/>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="59l-qm-2nr">
-                    <rect key="frame" x="252" y="175" width="11" height="16"/>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59l-qm-2nr">
+                    <rect key="frame" x="252" y="205" width="11" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="s" id="aVA-4k-mIU">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dkf-TQ-yQo">
-                    <rect key="frame" x="188" y="151" width="335" height="14"/>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dkf-TQ-yQo">
+                    <rect key="frame" x="188" y="176" width="335" height="14"/>
                     <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="VPNStatus tries to reconnect to the VPN every 120s by default." id="fsO-os-8rb">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -90,7 +91,7 @@
                         <action selector="doCheckForUpdates:" target="-2" id="FVR-SJ-4dV"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O7D-qa-qEI">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O7D-qa-qEI">
                     <rect key="frame" x="125" y="89" width="59" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Updates:" id="aic-J6-s0i">
                         <font key="font" usesAppearanceFont="YES"/>
@@ -98,6 +99,16 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCL-cX-bWo">
+                    <rect key="frame" x="188" y="133" width="171" height="18"/>
+                    <buttonCell key="cell" type="check" title="Restrict to one at a time" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="x0v-Tf-hbq">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="doSingleAutoConnect:" target="-2" id="OJ5-wz-EvE"/>
+                    </connections>
+                </button>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-iV-Zdi">
                     <rect key="frame" x="187" y="254" width="157" height="25"/>
                     <popUpButtonCell key="cell" type="push" title="Colors" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="FgX-Y2-4gP" id="GzK-wy-lNk">
@@ -117,8 +128,17 @@
                         <action selector="doChangeMenuBarImage:" target="-2" id="yqg-7q-4Au"/>
                     </connections>
                 </popUpButton>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHj-7i-3Ej">
+                    <rect key="frame" x="95" y="134" width="89" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Auto connect:" id="cKR-Jw-249">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="CHj-7i-3Ej" firstAttribute="centerY" secondItem="YCL-cX-bWo" secondAttribute="centerY" id="2Ox-8t-wmU"/>
                 <constraint firstItem="6QB-Sz-gYR" firstAttribute="firstBaseline" secondItem="JEm-iV-Zdi" secondAttribute="firstBaseline" id="2jO-19-zwA"/>
                 <constraint firstItem="6QB-Sz-gYR" firstAttribute="top" secondItem="6sE-tW-1JD" secondAttribute="top" constant="40" id="2vq-EA-a2N"/>
                 <constraint firstItem="q5O-D3-mgT" firstAttribute="centerY" secondItem="59l-qm-2nr" secondAttribute="centerY" id="4nV-aY-Z6G"/>
@@ -138,6 +158,7 @@
                 <constraint firstItem="K3Q-df-0o3" firstAttribute="top" secondItem="6QB-Sz-gYR" secondAttribute="bottom" constant="70" id="bNp-I2-jUP"/>
                 <constraint firstItem="1xo-AV-r9d" firstAttribute="top" secondItem="dKe-mY-Q8g" secondAttribute="bottom" constant="14" id="cxa-w5-zHt"/>
                 <constraint firstItem="K3Q-df-0o3" firstAttribute="trailing" secondItem="6QB-Sz-gYR" secondAttribute="trailing" id="fw3-r6-EOz"/>
+                <constraint firstItem="YCL-cX-bWo" firstAttribute="leading" secondItem="CHj-7i-3Ej" secondAttribute="trailing" constant="8" symbolic="YES" id="jJN-vH-1KW"/>
                 <constraint firstItem="K3Q-df-0o3" firstAttribute="centerY" secondItem="q5O-D3-mgT" secondAttribute="centerY" id="mYj-NO-QFZ"/>
                 <constraint firstItem="Dkf-TQ-yQo" firstAttribute="leading" secondItem="q5O-D3-mgT" secondAttribute="leading" id="nqg-E8-90a"/>
                 <constraint firstItem="O7D-qa-qEI" firstAttribute="centerY" secondItem="dKe-mY-Q8g" secondAttribute="centerY" id="p8G-Ef-ywH"/>

@@ -13,6 +13,7 @@
 
 @property (weak) IBOutlet NSTextField *retryDelayField;
 @property (weak) IBOutlet NSButton *automaticCheckForUpdatesButton;
+@property (weak) IBOutlet NSButton *singleAutoConnectButton;
 @property (weak) IBOutlet NSPopUpButton *menuBarImagePopUpButton;
 
 @end
@@ -46,6 +47,16 @@
 	{
 		[self.automaticCheckForUpdatesButton setState:NSControlStateValueOn];
 	}
+
+  BOOL singleAutoConnect = [[ACPreferences sharedPreferences] singleAutoConnect];
+  if(singleAutoConnect)
+  {
+    [self.singleAutoConnectButton setState:NSControlStateValueOn];
+  }
+  else
+  {
+    [self.singleAutoConnectButton setState:NSControlStateValueOff];
+  }
 
 	NSMenu *theMenu = self.menuBarImagePopUpButton.menu;
 	for(NSInteger menuItemIndex = 0 ; menuItemIndex < theMenu.numberOfItems ; menuItemIndex++)
@@ -92,6 +103,12 @@
 {
 	NSButton *checkbox = (NSButton *)sender;
 	[[ACPreferences sharedPreferences] setDisabledCheckForUpdatesAutomatically:(checkbox.state != NSControlStateValueOn)];
+}
+
+- (IBAction)doSingleAutoConnect:(id)sender
+{
+  NSButton *checkbox = (NSButton *)sender;
+  [[ACPreferences sharedPreferences] setSingleAutoConnect:(checkbox.state != NSControlStateValueOff)];
 }
 
 - (IBAction)doChangeMenuBarImage:(id)sender

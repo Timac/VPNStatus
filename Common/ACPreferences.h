@@ -61,6 +61,13 @@ extern NSString * const kACMenuBarImageDidChange;
 
 
 /**
+ Enable auto connecting to max one service.
+ */
+-(BOOL)singleAutoConnect;
+-(void)setSingleAutoConnect:(BOOL)inValue;
+
+
+/**
  Menu Bar Images
  */
 
