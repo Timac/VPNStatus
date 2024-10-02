@@ -69,7 +69,8 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 		services = [[NSMutableArray alloc] init];
 	}
 
-	for(NSDictionary *service in services)
+	// Use a copy to avoid looping through an array that is being modified during the loop
+	for(NSDictionary *service in [services copy])
 	{
 		NSString *serviceIdentifier = service[kServiceIdentifierKey];
 		if([serviceIdentifier isEqualToString:inServiceIdentifier])
