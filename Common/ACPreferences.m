@@ -20,6 +20,7 @@ NSString * const kServiceIgnoredVPNsKey = @"IgnoredVPNs";
 NSString * const kAlwaysConnectedRetryDelayPrefKey = @"AlwaysConnectedRetryDelay";
 
 NSString * const kDisabledCheckForUpdatesAutomaticallyPrefKey = @"DisabledCheckForUpdatesAutomatically";
+NSString * const kSingleAutoConnectPrefKey = @"SingleAutoConnect";
 NSString * const kMenuBarImageTypePrefKey = @"MenuBarImageType";
 
 NSString * const kACConfigurationDidChange = @"kACConfigurationDidChange";
@@ -68,7 +69,8 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 		services = [[NSMutableArray alloc] init];
 	}
 
-	for(NSDictionary *service in services)
+	// Use a copy to avoid looping through an array that is being modified during the loop
+	for(NSDictionary *service in [services copy])
 	{
 		NSString *serviceIdentifier = service[kServiceIdentifierKey];
 		if([serviceIdentifier isEqualToString:inServiceIdentifier])
@@ -80,7 +82,14 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 			[services addObject:updatedServiceDictionary];
 
 			serviceFound = YES;
-			break;
+		}
+		else if(inAlwaysConnected && [self singleAutoConnect])
+		{
+			NSMutableDictionary *updatedServiceDictionary = [service mutableCopy];
+			updatedServiceDictionary[kServiceAlwaysConnectedKey] = [NSNumber numberWithBool:false];
+
+			[services removeObject:service];
+			[services addObject:updatedServiceDictionary];
 		}
 	}
 
@@ -200,6 +209,16 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 -(void)setDisabledCheckForUpdatesAutomatically:(BOOL)inValue
 {
 	[[NSUserDefaults standardUserDefaults] setBool:inValue forKey:kDisabledCheckForUpdatesAutomaticallyPrefKey];
+}
+
+-(BOOL)singleAutoConnect
+{
+	return [[NSUserDefaults standardUserDefaults] boolForKey:kSingleAutoConnectPrefKey];
+}
+
+-(void)setSingleAutoConnect:(BOOL)inValue
+{
+	[[NSUserDefaults standardUserDefaults] setBool:inValue forKey:kSingleAutoConnectPrefKey];
 }
 
 -(MenuBarImageType)menuBarImageType

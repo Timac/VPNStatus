@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
         <window title="From the same developer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="xOd-HO-29H" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="133" y="235" width="471" height="303"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1710" height="1069"/>
             <value key="minSize" type="size" width="471" height="303"/>
             <value key="maxSize" type="size" width="471" height="303"/>
             <value key="minFullScreenContentSize" type="size" width="471" height="303"/>
@@ -62,7 +62,7 @@
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pNf-j0-tGB">
                                         <rect key="frame" x="82" y="22" width="150" height="33"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zeg-Ha-1do">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zeg-Ha-1do">
                                                 <rect key="frame" x="-2" y="17" width="73" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="MarkChart" id="yQk-ZW-ZYH">
                                                     <font key="font" textStyle="headline" name=".SFNS-Bold"/>
@@ -70,7 +70,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OK1-bJ-hmH">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OK1-bJ-hmH">
                                                 <rect key="frame" x="-2" y="0.0" width="146" height="14"/>
                                                 <textFieldCell key="cell" title="Preview Mermaid diagrams" id="6iB-aD-z2o">
                                                     <font key="font" textStyle="subheadline" name=".SFNS-Regular"/>
@@ -146,7 +146,7 @@
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VC1-Ul-sCi">
                                         <rect key="frame" x="82" y="22" width="150" height="33"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-uP-1kK">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ekS-uP-1kK">
                                                 <rect key="frame" x="-2" y="17" width="96" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Dependencies" id="upD-tw-8po">
                                                     <font key="font" textStyle="headline" name=".SFNS-Bold"/>
@@ -154,7 +154,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K6P-fm-abg">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K6P-fm-abg">
                                                 <rect key="frame" x="-2" y="0.0" width="95" height="14"/>
                                                 <textFieldCell key="cell" title="Analyze your app" id="Ed8-7V-oc8">
                                                     <font key="font" textStyle="subheadline" name=".SFNS-Regular"/>
@@ -230,7 +230,7 @@
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-8b-0PC">
                                         <rect key="frame" x="82" y="22" width="150" height="33"/>
                                         <subviews>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ie8-la-hfc">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ie8-la-hfc">
                                                 <rect key="frame" x="-2" y="17" width="75" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="VPNStatus" id="gbX-YX-ycX">
                                                     <font key="font" textStyle="headline" name=".SFNS-Bold"/>
@@ -238,7 +238,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-MV-z0B">
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-MV-z0B">
                                                 <rect key="frame" x="-2" y="0.0" width="123" height="14"/>
                                                 <textFieldCell key="cell" title="Auto connect to a VPN" id="Vr0-nT-DxM">
                                                     <font key="font" textStyle="subheadline" name=".SFNS-Regular"/>
