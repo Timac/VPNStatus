@@ -73,6 +73,13 @@
 			// Don't show the VPNs that should be ignored
 			continue;
 		}
+		else if([neConfiguration.name hasPrefix:@"com.apple.preferences."])
+		{
+			// Don't show internal configurations from macOS Sequoia
+			// com.apple.preferences.application-firewall
+			// com.apple.preferences.networkprivacy-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+			continue;
+		}
 
 		ACNEService *service = [[ACNEService alloc] initWithConfiguration:neConfiguration];
 		[self.neServices addObject:service];
