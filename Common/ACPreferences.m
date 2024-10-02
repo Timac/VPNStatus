@@ -81,8 +81,14 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 			[services addObject:updatedServiceDictionary];
 
 			serviceFound = YES;
-			break;
-		}
+    } else if([self singleAutoConnect])
+    {
+      NSMutableDictionary *updatedServiceDictionary = [service mutableCopy];
+      updatedServiceDictionary[kServiceAlwaysConnectedKey] = [NSNumber numberWithBool:false];
+
+      [services removeObject:service];
+      [services addObject:updatedServiceDictionary];
+    }
 	}
 
 	if(!serviceFound)
