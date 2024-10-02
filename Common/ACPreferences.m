@@ -81,14 +81,15 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 			[services addObject:updatedServiceDictionary];
 
 			serviceFound = YES;
-    } else if([self singleAutoConnect])
-    {
-      NSMutableDictionary *updatedServiceDictionary = [service mutableCopy];
-      updatedServiceDictionary[kServiceAlwaysConnectedKey] = [NSNumber numberWithBool:false];
+		}
+		else if([self singleAutoConnect])
+		{
+			NSMutableDictionary *updatedServiceDictionary = [service mutableCopy];
+			updatedServiceDictionary[kServiceAlwaysConnectedKey] = [NSNumber numberWithBool:false];
 
-      [services removeObject:service];
-      [services addObject:updatedServiceDictionary];
-    }
+			[services removeObject:service];
+			[services addObject:updatedServiceDictionary];
+		}
 	}
 
 	if(!serviceFound)
@@ -211,12 +212,12 @@ NSString * const kACMenuBarImageDidChange = @"kACMenuBarImageDidChange";
 
 -(BOOL)singleAutoConnect
 {
-  return [[NSUserDefaults standardUserDefaults] boolForKey:kSingleAutoConnectPrefKey];
+	return [[NSUserDefaults standardUserDefaults] boolForKey:kSingleAutoConnectPrefKey];
 }
 
 -(void)setSingleAutoConnect:(BOOL)inValue
 {
-  [[NSUserDefaults standardUserDefaults] setBool:inValue forKey:kSingleAutoConnectPrefKey];
+	[[NSUserDefaults standardUserDefaults] setBool:inValue forKey:kSingleAutoConnectPrefKey];
 }
 
 -(MenuBarImageType)menuBarImageType

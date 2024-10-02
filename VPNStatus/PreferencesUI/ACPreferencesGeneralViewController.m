@@ -48,15 +48,15 @@
 		[self.automaticCheckForUpdatesButton setState:NSControlStateValueOn];
 	}
 
-  BOOL singleAutoConnect = [[ACPreferences sharedPreferences] singleAutoConnect];
-  if(singleAutoConnect)
-  {
-    [self.singleAutoConnectButton setState:NSControlStateValueOn];
-  }
-  else
-  {
-    [self.singleAutoConnectButton setState:NSControlStateValueOff];
-  }
+	BOOL singleAutoConnect = [[ACPreferences sharedPreferences] singleAutoConnect];
+	if(singleAutoConnect)
+	{
+		[self.singleAutoConnectButton setState:NSControlStateValueOn];
+	}
+	else
+	{
+		[self.singleAutoConnectButton setState:NSControlStateValueOff];
+	}
 
 	NSMenu *theMenu = self.menuBarImagePopUpButton.menu;
 	for(NSInteger menuItemIndex = 0 ; menuItemIndex < theMenu.numberOfItems ; menuItemIndex++)
@@ -107,8 +107,8 @@
 
 - (IBAction)doSingleAutoConnect:(id)sender
 {
-  NSButton *checkbox = (NSButton *)sender;
-  [[ACPreferences sharedPreferences] setSingleAutoConnect:(checkbox.state != NSControlStateValueOff)];
+	NSButton *checkbox = (NSButton *)sender;
+	[[ACPreferences sharedPreferences] setSingleAutoConnect:(checkbox.state != NSControlStateValueOff)];
 }
 
 - (IBAction)doChangeMenuBarImage:(id)sender
