@@ -226,12 +226,7 @@
 				[menu addItem:[NSMenuItem separatorItem]];
 			}
 			
-			[menu addItem:[[NSMenuItem alloc] initWithTitle:neService.name action:nil keyEquivalent:@""]];
-			
-			// Update the information
-			[menu addItem:[[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ (%@)", [neService serverAddress], [neService protocol]] action:nil keyEquivalent:@""]];
-			
-			NSMenuItem *alwaysAutoConnectMenuItem = [[NSMenuItem alloc] initWithTitle:@"Always auto connect" action:@selector(alwaysAutoConnect:) keyEquivalent:@""];
+			NSMenuItem *alwaysAutoConnectMenuItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Always Connect %@", neService.name] action:@selector(alwaysAutoConnect:) keyEquivalent:@""];
 			[alwaysAutoConnectMenuItem setTag:neServiceIndex];
 			NSArray<NSString *>*alwaysConnectedServices = [[ACPreferences sharedPreferences] alwaysConnectedServicesIdentifiers];
 			if([alwaysConnectedServices containsObject:[neService.configuration.identifier UUIDString]])
@@ -244,6 +239,10 @@
 			}
 			
 			[menu addItem:alwaysAutoConnectMenuItem];
+			
+			// Update the information
+			[menu addItem:[[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ (%@)", [neService serverAddress], [neService protocol]] action:nil keyEquivalent:@""]];
+
 			neServiceIndex++;
 		}
 		
