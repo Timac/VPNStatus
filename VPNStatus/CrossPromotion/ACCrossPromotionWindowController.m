@@ -1,11 +1,19 @@
 //
 //  ACCrossPromotionWindowController.m
-//  Dependencies
+//  VPNStatus
 //
 //  Created by Alexandre Colucci on 16.03.2024.
 //  Copyright © 2024 Alexandre Colucci. All rights reserved.
 
 #import "ACCrossPromotionWindowController.h"
+#import <WebKit/WebKit.h>
+
+@interface ACCrossPromotionWindowController () <WKNavigationDelegate>
+
+@property (weak) IBOutlet WKWebView *webView;
+
+@end
+
 
 @implementation ACCrossPromotionWindowController
 
@@ -30,19 +38,30 @@
 	return self;
 }
 
--(IBAction)doDependencies:(id)sender
+- (void)windowDidLoad
 {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://apps.apple.com/app/dependencies/id1538972026"]];
+	[super windowDidLoad];
+
+	[self.webView setNavigationDelegate:self];
+	NSURL *url = [NSURL URLWithString:@"https://blog.timac.org/apps"];
+	NSURLRequest *request = [NSURLRequest requestWithURL: url];
+	[self.webView loadRequest:request];
 }
 
--(IBAction)doMarkChart:(id)sender
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://apps.apple.com/us/app/markchart-mermaid-preview/id6475648822"]];
-}
+	NSURL *url = navigationAction.request.URL;
+	if([url.absoluteString isEqualToString:@"https://blog.timac.org/apps"])
+	{
+		decisionHandler(WKNavigationActionPolicyAllow);
+		return;
+	}
+	else if(url != nil)
+	{
+		[[NSWorkspace sharedWorkspace] openURL:url];
+	}
 
--(IBAction)doVPNStatus:(id)sender
-{
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/Timac/VPNStatus/releases"]];
+	decisionHandler(WKNavigationActionPolicyCancel);
 }
 
 @end
